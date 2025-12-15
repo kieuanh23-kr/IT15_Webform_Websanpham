@@ -28,12 +28,13 @@
                     <asp:TextBox ID="txtSearch" runat="server"
                                  class="form-control search-input"
                                  placeholder="Tìm kiếm sản phẩm..." />
-
+                    <asp:Panel ID="pnlSearch" runat="server" DefaultButton="btnSearch">
                     <asp:LinkButton ID="btnSearch" runat="server"
-                                    class="search-icon-btn"
-                                    >
+                                    class="search-icon-btn" OnClick="btnSearch_Click"
+                                    CausesValidation="false">
                         <i class="bi bi-search"></i>
                     </asp:LinkButton>
+                    </asp:Panel>
                 </div>
 
 
@@ -64,10 +65,16 @@
                     <a href="#" class="text-dark fs-5">
                         <i class="bi bi-bell"></i>
                     </a>
-                    <a  runat="server" class="text-dark fs-5" onserverclick="btnLogin_Click" >
+                    <a runat="server" class="text-dark fs-5" onserverclick="btnLogin_Click" >
                         <i class="bi bi-person-circle" ></i>
                     </a>
                 </div>
+                <asp:Label 
+                    ID="lblGreeting" 
+                    runat="server" 
+                    CssClass="ms-3 fw-semibold" Style="color:#1712c9"
+                    Visible="false">
+                </asp:Label>
             </div>
         </nav>
 

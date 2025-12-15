@@ -145,7 +145,7 @@
               margin-bottom:14px;
           }
           .recruit-title{
-              font-weight:900;
+              font-weight:700;
               font-size:18px;
           }
 
@@ -174,7 +174,7 @@
           }
           .rc-body{ padding:14px 16px 14px; }
           .rc-label{
-              font-weight:900;
+              font-weight:700;
               margin:10px 0 2px;
           }
           .rc-val{

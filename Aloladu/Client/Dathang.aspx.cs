@@ -4,6 +4,8 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
+using System.Net;
+using System.Security.Policy;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -24,6 +26,12 @@ namespace Aloladu.Client
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["CustomerId"] == null)
+            {
+                Response.Redirect("Dangnhap.aspx");
+                return;
+            }
+
             if (!IsPostBack)
             {
                 int productId;
@@ -44,16 +52,22 @@ namespace Aloladu.Client
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                // NOTE: đổi tên cột cho đúng DB bạn nếu khác
+              
                 string sql = @"
                     SELECT TOP 1
                         Id, Name, CategoryKey, BrandName, Warranty,
                         OldPrice, Price, ImageUrl,Description
                     FROM Products
-                    WHERE Id = @id"; //Sau bổ sung ISNULL(SoldCount, 0) AS SoldCount
+                    WHERE Id = @id"; 
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", id);
+
+                string sqlCustomer = @"SELECT TOP 1 FullName, Phone, CCCD, Email, Address, BirthDate, Gender
+                        FROM Customers
+                        WHERE Id = @id;";
+                SqlCommand sqlCommand = new SqlCommand(sqlCustomer, conn);
+                sqlCommand.Parameters.AddWithValue("@id", Convert.ToInt32(Session["CustomerId"]));
 
                 conn.Open();
                 using (SqlDataReader rd = cmd.ExecuteReader())
@@ -89,6 +103,15 @@ namespace Aloladu.Client
                     txtTotal.Text = FormatMoney(price);      // mặc định qty=1
 
 
+                }
+                using (SqlDataReader rd = sqlCommand.ExecuteReader())
+                {
+                    if (rd.Read())
+                    {
+                        txtName.Text = rd["FullName"]?.ToString() ?? "";
+                        txtPhone.Text = rd["Phone"]?.ToString() ?? "";
+                        txtAddress.Text = rd["Address"] == DBNull.Value ? "" : rd["Address"].ToString();
+                    }
                 }
             }
         }
@@ -174,12 +197,6 @@ namespace Aloladu.Client
 
                 lblMsg.CssClass = "d-block mt-2 text-success";
                 lblMsg.Text = "Đặt hàng thành công!";
-
-                // (tuỳ bạn) clear form sau khi đặt
-                // btnClear_Click(sender, e);
-
-                // (tuỳ bạn) redirect sang trang đơn hàng
-                // Response.Redirect("DonHang.aspx");
             }
             catch (Exception ex)
             {

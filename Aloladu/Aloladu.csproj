@@ -75,6 +75,7 @@
     <Content Include="Client\Donhang.aspx" />
     <Content Include="Client\Sanpham.aspx" />
     <Content Include="Client\Taikhoan.aspx" />
+    <Content Include="Client\Timkiem.aspx" />
     <Content Include="Client\Tintuc.aspx" />
     <Content Include="Client\TintucChitiet.aspx" />
     <Content Include="Client\TintucTuyendung.aspx" />
@@ -145,6 +146,13 @@
     </Compile>
     <Compile Include="Client\Taikhoan.aspx.designer.cs">
       <DependentUpon>Taikhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Timkiem.aspx.cs">
+      <DependentUpon>Timkiem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Client\Timkiem.aspx.designer.cs">
+      <DependentUpon>Timkiem.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\Tintuc.aspx.cs">
       <DependentUpon>Tintuc.aspx</DependentUpon>

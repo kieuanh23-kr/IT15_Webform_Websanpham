@@ -136,7 +136,7 @@
 }
 
 .p-card {
-    border: 3px solid #2e2dfb;
+    border: 2px solid #2e2dfb;
     border-radius: 18px;
     overflow: hidden;
     background: #fff;
@@ -168,8 +168,7 @@
     font-weight: 700;
     font-size: 15px;
     color: #1d1bd9;
-    line-height: 1.15;
-    margin-bottom: 8px;
+    margin: 2px 0 2px;
     white-space: nowrap; /* KHÔNG cho xuống dòng */
     overflow: hidden; /* Ẩn phần dư */
     text-overflow: ellipsis;

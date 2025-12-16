@@ -127,6 +127,11 @@
             padding:18px;
             font-weight:800;
         }
+        .lbDangnhap{
+            margin: 14px 0;
+            color:#777;
+            font-weight:700;
+        }
 
      .order-divider{
         height: 2px;
@@ -177,7 +182,10 @@
         Chưa có đơn hàng nào.
     </asp:Panel>
 
-    <asp:Label ID="lbDangnhap" runat="server" />
+    <asp:Panel ID="pnDangnhap" runat="server" Visiblae="false"> 
+        <asp:Label runat="server" class="lbDangnhap" Text="Vui lòng "/><a href="Dangnhap.aspx" style="font-weight:700 "> Đăng nhập </a>
+        <asp:Label runat="server" class="lbDangnhap" Text="  để xem giỏ hàng!"></asp:Label>
+    </asp:Panel>
 
     <asp:Repeater ID="rptOrders" runat="server">
         <ItemTemplate>

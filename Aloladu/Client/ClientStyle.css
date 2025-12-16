@@ -98,6 +98,7 @@
     grid-template-columns: repeat(6, minmax(120px, 1fr));
     gap: 24px;
     margin-bottom: 24px;
+    width: 100%;
 }
 
 .cat-card {
@@ -142,6 +143,7 @@
     background: #fff;
     position: relative;
     height: 100%;
+    margin-right: 8px;
 }
 
 .p-img {
@@ -233,8 +235,8 @@
 .brand-row {
     display: flex;
     gap: 16px;
-    overflow: hidden; /* ẩn thanh scroll, ta scroll bằng js */
-    scroll-behavior: smooth;
+    overflow: hidden;
+    flex-wrap: nowrap;
 }
 
 /* mỗi item có width cố định để scroll theo “bước” */

@@ -1,62 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\client\\timkiem.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\timkiem.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\client\\timkiem.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\timkiem.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\donhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\donhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\client\\category.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\category.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\taikhoan.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\taikhoan.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\client\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
       "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\tintuc.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\client\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\client\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\client\\clientmaster.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\clientmaster.master.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\clientmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\clientmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\dangnhap.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\dangnhap.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\taikhoan.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\taikhoan.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\dangnhap.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\dangnhap.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\aloladu\\client\\dangky.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\dangky.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\client\\timkiem.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\client\\timkiem.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,199 +22,32 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Category.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Category.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Category.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Category.aspx",
-              "RelativeToolTip": "Aloladu\\Client\\Category.aspx",
+              "DocumentIndex": 1,
+              "Title": "Timkiem.aspx",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Client\\Timkiem.aspx",
+              "RelativeDocumentMoniker": "Aloladu\\Client\\Timkiem.aspx",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Client\\Timkiem.aspx",
+              "RelativeToolTip": "Aloladu\\Client\\Timkiem.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-15T15:21:49.45Z",
+              "WhenOpened": "2025-12-16T08:55:23.43Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Sanpham.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Sanpham.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Sanpham.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Sanpham.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Client\\Sanpham.aspx.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T14:07:16.569Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Timkiem.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Timkiem.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Timkiem.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Timkiem.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Client\\Timkiem.aspx.cs",
-              "ViewState": "AgIAAKgAAAAAAAAAAADwv7cAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T14:04:07.434Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Timkiem.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Timkiem.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Timkiem.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Timkiem.aspx",
-              "RelativeToolTip": "Aloladu\\Client\\Timkiem.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-15T14:02:59.849Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Taikhoan.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Taikhoan.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Taikhoan.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Taikhoan.aspx",
-              "RelativeToolTip": "Aloladu\\Client\\Taikhoan.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-14T16:09:41.692Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Donhang.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Donhang.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Donhang.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Donhang.aspx",
-              "RelativeToolTip": "Aloladu\\Client\\Donhang.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-14T16:55:23.716Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ClientMaster.Master.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\ClientMaster.Master.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\ClientMaster.Master.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\ClientMaster.Master.cs",
-              "RelativeToolTip": "Aloladu\\Client\\ClientMaster.Master.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T13:07:13.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ClientMaster.Master",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\ClientMaster.Master",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\ClientMaster.Master",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\ClientMaster.Master",
-              "RelativeToolTip": "Aloladu\\Client\\ClientMaster.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-14T15:58:09.929Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Sanpham.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Sanpham.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Sanpham.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Sanpham.aspx",
-              "RelativeToolTip": "Aloladu\\Client\\Sanpham.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-14T17:24:22.575Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Taikhoan.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Taikhoan.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Taikhoan.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Taikhoan.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Client\\Taikhoan.aspx.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAgwCsAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T16:23:49.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Dangnhap.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Dangnhap.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Dangnhap.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Dangnhap.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Client\\Dangnhap.aspx.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAwwBsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T15:41:12.616Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Dangnhap.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Dangnhap.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Dangnhap.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Dangnhap.aspx",
-              "RelativeToolTip": "Aloladu\\Client\\Dangnhap.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-14T15:39:43.788Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Dangky.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Dangky.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Client\\Dangky.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Dangky.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Client\\Dangky.aspx.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAiwJgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-14T15:00:57.724Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "c253c5e1-b876-4c62-8ebc-9f3d60898ccf",
-        "Display": 0,
-        "X": 1045,
-        "Y": 78,
-        "Width": 901,
-        "Height": 955,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "Tintuc.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Tintuc.aspx",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Client\\Tintuc.aspx",
               "RelativeDocumentMoniker": "Aloladu\\Client\\Tintuc.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Client\\Tintuc.aspx",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Client\\Tintuc.aspx",
               "RelativeToolTip": "Aloladu\\Client\\Tintuc.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",

@@ -29,7 +29,7 @@ namespace Aloladu.Client
             {
                 if(Session["CustomerId"] == null)
                 {
-                    lbDangnhap.Text = "Vui lòng đăng nhập để xem đơn hàng của bạn.";
+                    pnDangnhap.Visible=true;
                     return;
                 }
                 CurrentPage = 1;

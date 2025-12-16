@@ -33,6 +33,24 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.Literal litBrandName;
 
         /// <summary>
+        /// btnPrevBrand1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPrevBrand1;
+
+        /// <summary>
+        /// btnNextBrand1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNextBrand1;
+
+        /// <summary>
         /// rptTopSelling control.
         /// </summary>
         /// <remarks>
@@ -60,6 +78,24 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.Literal litBrandName2;
 
         /// <summary>
+        /// btnPrevBrand2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPrevBrand2;
+
+        /// <summary>
+        /// btnNextBrand2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNextBrand2;
+
+        /// <summary>
         /// rptTopDeals control.
         /// </summary>
         /// <remarks>
@@ -85,5 +121,23 @@ namespace Aloladu.Client
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal litBrandName3;
+
+        /// <summary>
+        /// btnPrevBrand3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPrevBrand3;
+
+        /// <summary>
+        /// btnNextBrand3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnNextBrand3;
     }
 }

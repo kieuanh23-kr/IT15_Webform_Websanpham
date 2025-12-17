@@ -12,10 +12,10 @@ namespace Aloladu.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Nếu đã đăng nhập rồi thì vào thẳng Dashboard
+            // Nếu đã đăng nhập rồi thì vào thẳng 
             if (Session["ADMIN_AUTH"] != null && (bool)Session["ADMIN_AUTH"] == true)
             {
-                Response.Redirect("~/Admin/Dashboard.aspx");
+                Response.Redirect("Donhang.aspx");
             }
         }
 
@@ -34,7 +34,7 @@ namespace Aloladu.Admin
                 Session["ADMIN_AUTH"] = true;
                 Session["ADMIN_USER"] = user;
 
-                Response.Redirect("~/Admin/Dashboard.aspx");
+                Response.Redirect("Donhang.aspx");
             }
             else
             {

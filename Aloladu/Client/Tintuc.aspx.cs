@@ -549,16 +549,15 @@ namespace Aloladu.Client
         {
             string img = r["ImageUrl"]?.ToString();
             if (string.IsNullOrWhiteSpace(img))
-                img = "Images/download.png"; // đổi vị trí ảnh
+                img = "Aloladu/Images/download.png";
 
             img = img.Trim().Replace("\\", "/");
 
             if (!img.StartsWith("~/") && !img.StartsWith("/"))
             {
-                if (!img.Contains("/")) img = "Images/" + img;
+                if (!img.Contains("/")) img = "Aloladu/Images/" + img; 
                 img = "~/" + img;
             }
-
             r["ImageUrl"] = ResolveUrl(img);
         }
     }

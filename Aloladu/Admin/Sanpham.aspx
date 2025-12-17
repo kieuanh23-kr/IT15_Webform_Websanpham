@@ -1,0 +1,240 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="Sanpham.aspx.cs" Inherits="Aloladu.Admin.Sanpham" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style>
+         .products-title{
+             font-size: 34px;
+             font-weight: 900;
+             color: #0b0bbf;
+             letter-spacing: .5px;
+             margin-bottom: 18px;
+         }
+
+         .products-toolbar{
+             display: flex;
+             align-items: center;
+             gap: 12px;
+             margin-bottom: 14px;
+         }
+
+         .products-select{
+             min-width: 180px;
+             padding: 10px 12px;
+             border: 2px solid #1712c9;
+             border-radius: 4px;
+             font-weight: 700;
+             background: #fff;
+         }
+
+         .products-input{
+             min-width: 320px;
+             padding: 10px 12px;
+             border: 2px solid #1712c9;
+             border-radius: 4px;
+             font-weight: 600;
+         }
+
+         /* vùng bảng có scroll, hiển thị 10 dòng */
+
+         /* bảng */
+         .products-table{
+             margin: 0;
+             font-size: 15px;
+         }
+         .products-table-wrap {
+             max-height: 600px; /* Tương đương ~10 dòng (mỗi dòng ~60px) */
+             overflow-y: auto;
+             overflow-x: auto;
+             border: 1px solid #e5e7eb;
+             border-radius: 8px;
+             position: relative;
+         }
+
+         /* header */
+             .products-table thead th {
+                 position: sticky !important;
+                 top: 0;
+                 z-index: 2;
+                 font-weight: 700;
+                 border-bottom: 1px solid #e6e6e6 !important;
+                 white-space: nowrap;
+                 padding: 12px 8px !important;
+             }
+
+         /* cell */
+             .products-table td {
+                 border-bottom: 1px solid #f1f1f1;
+                 vertical-align: middle;
+                 padding: 12px 8px !important;
+             }
+
+         /* hover */
+         .products-table tbody tr:hover{
+             background: #f9fbff;
+         }
+
+         /* cột checkbox */
+         .col-check{
+             width: 48px;
+             text-align: center;
+             padding: 8px !important;
+         }
+   
+
+         /* giới hạn chiều rộng chữ dài */
+         .products-table td:nth-child(5), /* Sản phẩm */
+         .products-table td:nth-child(6), /* Khách hàng */
+         .products-table td:nth-child(7)  /* Địa chỉ */
+         {
+             max-width: 280px;
+             white-space: nowrap;
+             overflow: hidden;
+             text-overflow: ellipsis;
+         }
+         .btn-del{
+                 display:block;
+                 background: #000000;
+                 color: #fff;
+                 min-width: 110px;
+                 height: 45px;
+                 border-radius: 4px;
+                 font-weight: 700;
+                 padding: 0 14px;
+                 cursor: pointer;
+                 align-content: center;
+                 border: 2px solid #000000;
+             }
+             .btn-del:hover {
+                 background: #ff5757;
+                 color: #fff;
+                 border-color: #ff5757;
+             }
+         .btn-search{
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 background: #1712c9;
+                 color: #fff;
+                 border-color: #1712c9;
+                 min-width:45px;
+                 height:45px;
+                 border-radius:4px;
+                 font-weight:700;
+                 padding:0 14px;
+                 cursor:pointer;
+             }
+             .btn-search:hover {
+                 background: #0b0bbf;
+                 color: #fff;
+                 border-color: #0b0bbf;
+             }
+
+        .btn-create{
+            display:block;
+            background: #1712c9;
+            color: #fff;
+            min-width: 110px;
+            height: 45px;
+            border-radius: 4px;
+            font-weight: 700;
+            padding: 0 14px;
+            cursor: pointer;
+            align-content: center;
+            border: 2px solid #1712c9;
+        }
+        .btn-create:hover {
+            background: #004aad;
+            color: #fff;
+            border-color: #004aad;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+      <div class="products-page">
+         <div class="products-title">SẢN PHẨM</div>
+
+         <div class="products-toolbar">
+             <asp:DropDownList ID="ddlField" runat="server" CssClass="products-select">
+                 <asp:ListItem Text="Tên sản phẩm" Value="Proc_Name" />
+                 <asp:ListItem Text="Hãng sản xuất" Value="Proc_Brand" />
+                 <asp:ListItem Text="Phân loại" Value="Proc_Cat" />
+             </asp:DropDownList>
+
+
+             <asp:TextBox ID="txtKeyword" runat="server" CssClass="products-input" placeholder="Nhập từ khoá tìm kiếm"></asp:TextBox>
+
+             <asp:LinkButton ID="btnSearch" runat="server" CssClass="btn btn-search"
+                 OnClick="btnSearch_Click">
+                 <i class="bi bi-search"></i>
+             </asp:LinkButton>
+
+             <div class="d-flex ms-auto gap-2">
+             <asp:LinkButton ID="btnCreate" runat="server" CssClass="btn btn-create"
+                    OnClick="btnCreate_Click">
+                    Thêm mới
+             </asp:LinkButton>
+             <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-del"
+                 OnClientClick="return confirm('Bạn chắc chắn muốn xóa các sản phẩm đã chọn?');"
+                 OnClick="btnDelete_Click">
+                 Xóa
+             </asp:LinkButton>
+             </div>
+         </div>
+
+         <div class="products-table-wrap">
+             <asp:GridView ID="gvProducts" runat="server"
+                 AutoGenerateColumns="False"
+                 DataKeyNames="Proc_ID"
+                 CssClass="table table-hover align-middle products-table"
+                 GridLines="None" 
+                 UseAccessibleHeader="true">
+
+                 <Columns>
+                     <asp:TemplateField HeaderStyle-CssClass="col-check" ItemStyle-CssClass="col-check" HeaderStyle-BackColor="#d9d9d9">
+                         <HeaderTemplate>
+                             <input type="checkbox" onclick="toggleAll(this)" />
+                         </HeaderTemplate>
+                         <ItemTemplate>
+                             <asp:CheckBox ID="ckRow" runat="server" />
+                         </ItemTemplate>
+                     </asp:TemplateField>
+
+                     <asp:TemplateField HeaderText="Mã sản phẩm" HeaderStyle-BackColor="#d9d9d9">
+                         <ItemTemplate>
+                             <a class="order-id-link" style="margin-left:40px"
+                                href='<%# "DonhangChitiet.aspx?id=" + Eval("Proc_ID") %>'>
+                                 <%# Eval("Proc_ID") %>
+                             </a>
+                         </ItemTemplate>
+                     </asp:TemplateField>
+
+                     <asp:BoundField DataField="Proc_Name" HeaderText="Sản phẩm" HeaderStyle-BackColor="#d9d9d9"/>
+                     <asp:BoundField DataField="Proc_OldPrice" HeaderText="Giá gốc" HeaderStyle-BackColor="#d9d9d9"/>
+                     <asp:BoundField DataField="Proc_Price" HeaderText="Giá bán" HeaderStyle-BackColor="#d9d9d9"/>
+                     <asp:TemplateField HeaderText="Danh mục" HeaderStyle-BackColor="#d9d9d9">
+                        <ItemTemplate>
+                            <%# GetCategoryName(Eval("Proc_Cat").ToString()) %>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                     <asp:BoundField DataField="Proc_Brand" HeaderText="Hãng sản xuất" HeaderStyle-BackColor="#d9d9d9"/>
+                     <asp:BoundField DataField="Proc_Quan" HeaderText="Lượng bán" HeaderStyle-BackColor="#d9d9d9"/>
+                 </Columns>
+
+             </asp:GridView>
+         </div>
+
+         <asp:Label ID="lblMsg" runat="server" CssClass="text-danger fw-semibold" Visible="false"></asp:Label>
+     </div>
+
+     <script>
+         function toggleAll(source) {
+             var gv = document.getElementById('<%= gvProducts.ClientID %>');
+             if (!gv) return;
+             var inputs = gv.getElementsByTagName('input');
+             for (var i = 0; i < inputs.length; i++) {
+                 if (inputs[i].type === 'checkbox' && inputs[i].id.indexOf('ckRow') !== -1) {
+                     inputs[i].checked = source.checked;
+                 }
+             }
+         }
+     </script>
+</asp:Content>

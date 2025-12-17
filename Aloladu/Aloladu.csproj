@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\AdminStyle.css" />
+    <Content Include="Admin\Dangnhap.aspx" />
     <Content Include="Client\Category.aspx" />
     <Content Include="Client\ClientStyle.css" />
     <Content Include="Client\Dangky.aspx" />
@@ -90,6 +92,13 @@
     </Compile>
     <Compile Include="Admin\AdminMaster.Master.designer.cs">
       <DependentUpon>AdminMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dangnhap.aspx.cs">
+      <DependentUpon>Dangnhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dangnhap.aspx.designer.cs">
+      <DependentUpon>Dangnhap.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>

@@ -95,10 +95,10 @@
 
             <div class="brand-nav">
                 <asp:LinkButton ID="btnPrevBrand1" runat="server" CssClass="brand-btn"
-                    OnClick="btnPrevBrand1_Click" CausesValidation="false">&#x2039;</asp:LinkButton>
+                    OnClick="btnPrevBrand1_Click" CausesValidation="false">&#10094;</asp:LinkButton>
 
                 <asp:LinkButton ID="btnNextBrand1" runat="server" CssClass="brand-btn"
-                    OnClick="btnNextBrand1_Click" CausesValidation="false">&#x203A;</asp:LinkButton>
+                    OnClick="btnNextBrand1_Click" CausesValidation="false">&#10095;</asp:LinkButton>
             </div>
         </div>
     </div>
@@ -163,9 +163,9 @@
             <p class="brand-title"><asp:Literal ID="litBrandName2" runat="server" /></p>
             <div class="brand-nav">
                 <asp:LinkButton ID="btnPrevBrand2" runat="server" CssClass="brand-btn"
-                    OnClick="btnPrevBrand2_Click" CausesValidation="false">&#x2039;</asp:LinkButton>
+                    OnClick="btnPrevBrand2_Click" CausesValidation="false">&#10094;</asp:LinkButton>
                 <asp:LinkButton ID="btnNextBrand2" runat="server" CssClass="brand-btn"
-                    OnClick="btnNextBrand2_Click" CausesValidation="false">&#x203A;</asp:LinkButton>
+                    OnClick="btnNextBrand2_Click" CausesValidation="false">&#10095;</asp:LinkButton>
             </div>
         </div>
     </div>
@@ -229,9 +229,9 @@
             <p class="brand-title"><asp:Literal ID="litBrandName3" runat="server" /></p>
             <div class="brand-nav">
                 <asp:LinkButton ID="btnPrevBrand3" runat="server" CssClass="brand-btn"
-                    OnClick="btnPrevBrand3_Click" CausesValidation="false">&#x2039;</asp:LinkButton>
+                    OnClick="btnPrevBrand3_Click" CausesValidation="false">&#10094;</asp:LinkButton>
                 <asp:LinkButton ID="btnNextBrand3" runat="server" CssClass="brand-btn"
-                    OnClick="btnNextBrand3_Click" CausesValidation="false">&#x203A;</asp:LinkButton>
+                    OnClick="btnNextBrand3_Click" CausesValidation="false">&#10095;</asp:LinkButton>
             </div>
         </div>
     </div>

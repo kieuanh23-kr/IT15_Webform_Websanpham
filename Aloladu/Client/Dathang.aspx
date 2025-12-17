@@ -228,8 +228,12 @@
 
 </div>
 
+
+
 <!-- CÁC BUTTON-->
 <div class="btn-row">
+    <!-- Thông báo -->
+    <asp:Label ID="lblMsg" runat="server" CssClass="d-block mt-2" />
     <!-- Thoát: quay lại trang trước -->
     <asp:Button ID="btnExit" runat="server" Text="Thoát"
         CssClass="btn-ui btn-outline"
@@ -248,8 +252,6 @@
         OnClick="btnPlaceOrder_Click" />
 </div>
 
-<!-- Thông báo -->
-<asp:Label ID="lblMsg" runat="server" CssClass="d-block mt-2" />
 
 
 

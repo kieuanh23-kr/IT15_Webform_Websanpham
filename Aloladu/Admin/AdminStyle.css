@@ -1,0 +1,81 @@
+﻿.admin-login-body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff;
+}
+
+/* Panel trái */
+.left-panel {
+    background: #0b0bbf;
+    padding: 48px;
+}
+
+.brand {
+    color: #fff;
+    font-size: 96px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* Panel phải */
+.right-panel {
+    background: #fff;
+    padding: 24px;
+}
+
+/* Card login */
+.login-card {
+    width: 520px;
+    max-width: 100%;
+    background: #fbf7f7;
+    border-radius: 12px;
+}
+
+
+.login-title {
+    color: #0b0bbf;
+}
+
+/* Làm viền input xanh giống hình */
+.login-card .form-control,
+.login-card .input-group-text {
+    border-color: #0b0bbf;
+}
+
+    .login-card .form-control:focus {
+        border-color: #0b0bbf;
+        box-shadow: 0 0 0 .2rem rgba(11, 11, 191, .15);
+    }
+
+/* Nút xanh tone giống hình */
+.login-card .btn-primary {
+    background: #0b0bbf;
+    border-color: #0b0bbf;
+}
+
+    .login-card .btn-primary:hover {
+        background: #0a0aa8;
+        border-color: #0a0aa8;
+    }
+
+.login-title {
+    text-align: center;
+    color: #1712c9;
+    font-weight: 700;
+    font-size: 28px;
+    margin: 0 0 18px;
+}
+
+.form-label {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tb {
+    width: 100%;
+    border: 2px solid #1712c9;
+    border-radius: 4px;
+    padding: 10px 10px;
+    background: transparent;
+    outline: none;
+           

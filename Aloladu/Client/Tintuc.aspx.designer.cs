@@ -42,6 +42,24 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.LinkButton btnMonth;
 
         /// <summary>
+        /// btnStorePrev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnStorePrev;
+
+        /// <summary>
+        /// btnStoreNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnStoreNext;
+
+        /// <summary>
         /// pnFeatured control.
         /// </summary>
         /// <remarks>
@@ -69,6 +87,24 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.Repeater rptLatest2;
 
         /// <summary>
+        /// pnStorePage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnStorePage2;
+
+        /// <summary>
+        /// rptStorePage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptStorePage2;
+
+        /// <summary>
         /// pnEmpty control.
         /// </summary>
         /// <remarks>
@@ -78,13 +114,31 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.Panel pnEmpty;
 
         /// <summary>
-        /// rptRecruit control.
+        /// btnJobPrev control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rptRecruit;
+        protected global::System.Web.UI.WebControls.LinkButton btnJobPrev;
+
+        /// <summary>
+        /// btnJobNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnJobNext;
+
+        /// <summary>
+        /// rptRecruitments control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptRecruitments;
 
         /// <summary>
         /// btnDay2 control.
@@ -114,6 +168,24 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.LinkButton btnMonth2;
 
         /// <summary>
+        /// btnHealthPrev control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnHealthPrev;
+
+        /// <summary>
+        /// btnHealthNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnHealthNext;
+
+        /// <summary>
         /// pnFeatured2 control.
         /// </summary>
         /// <remarks>
@@ -139,6 +211,24 @@ namespace Aloladu.Client
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptLatest2_2;
+
+        /// <summary>
+        /// pnHealthPage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnHealthPage2;
+
+        /// <summary>
+        /// rptHealthPage2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptHealthPage2;
 
         /// <summary>
         /// pnEmpty2 control.

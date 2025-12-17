@@ -265,19 +265,20 @@
 .brand-nav {
     display: flex;
     gap: 10px;
+    text-decoration: none !important;
 }
 
 .brand-btn {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #1b1bd6;
+    background: #fff;
+    color: #1b1bd6;
     border-radius: 6px;
-    border: 2px solid #fff;
-    background: transparent;
-    color: #fff;
-    font-weight: 900;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none !important;
     cursor: pointer;
     user-select: none;
 }

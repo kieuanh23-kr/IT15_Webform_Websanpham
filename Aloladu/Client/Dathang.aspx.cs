@@ -173,9 +173,9 @@ namespace Aloladu.Client
 
                     string sql = @"
                 INSERT INTO Orders
-                (ProductId, ReceiverName, Phone, Address, Quantity, UnitPrice, TotalAmount, PaymentMethod, Note, Status, CreatedAt)
+                (ProductId, ReceiverName, Phone, Address, Quantity, UnitPrice, TotalAmount, PaymentMethod, Note, Status, CreatedAt,Customers_ID)
                 VALUES
-                (@ProductId, @ReceiverName, @Phone, @Address, @Quantity, @UnitPrice, @TotalAmount, @PaymentMethod, @Note, @Status, @CreatedAt)";
+                (@ProductId, @ReceiverName, @Phone, @Address, @Quantity, @UnitPrice, @TotalAmount, @PaymentMethod, @Note, @Status, @CreatedAt,@Custemers_ID)";
 
                     using (SqlCommand cmd = new SqlCommand(sql, conn))
                     {
@@ -190,6 +190,7 @@ namespace Aloladu.Client
                         cmd.Parameters.AddWithValue("@Note", note);
                         cmd.Parameters.AddWithValue("@Status", "Chờ xử lý");
                         cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@Custemers_ID", Convert.ToInt32(Session["CustomerId"]));
 
                         cmd.ExecuteNonQuery();
                     }

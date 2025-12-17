@@ -43,19 +43,18 @@
         }
 
         .nav-btn {
-            width: 30px;
-            height: 30px;
+            width: 34px;
+            height: 34px;
+            border: 2px solid #1b1bd6;
+            background: #fff;
+            color: #1b1bd6;
             border-radius: 6px;
-            border: 2px solid #2e2dfb;
-            background: #1712c9;
-            color: #fff;
-            font-weight: 900;
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            text-decoration: none !important;
             cursor: pointer;
             user-select: none;
-            text-decoration:none;
         }
         .nav-btn.opacity-50{ opacity:.45; pointer-events:none; }
 
@@ -172,8 +171,8 @@
         </div>
 
         <div style="display:flex; gap:10px;">
-            <asp:LinkButton ID="btnPrev" runat="server" CssClass="nav-btn" OnClick="btnPrev_Click">&#x2039;</asp:LinkButton>
-            <asp:LinkButton ID="btnNext" runat="server" CssClass="nav-btn" OnClick="btnNext_Click">&#x203A;</asp:LinkButton>
+            <asp:LinkButton ID="btnPrev" runat="server" CssClass="nav-btn" OnClick="btnPrev_Click">&#10094;</asp:LinkButton>
+            <asp:LinkButton ID="btnNext" runat="server" CssClass="nav-btn" OnClick="btnNext_Click">&#10095;</asp:LinkButton>
         </div>
     </div>
 
@@ -182,7 +181,7 @@
         Chưa có đơn hàng nào.
     </asp:Panel>
 
-    <asp:Panel ID="pnDangnhap" runat="server" Visiblae="false"> 
+    <asp:Panel ID="pnDangnhap" runat="server"  Visible="false"> 
         <asp:Label runat="server" class="lbDangnhap" Text="Vui lòng "/><a href="Dangnhap.aspx" style="font-weight:700 "> Đăng nhập </a>
         <asp:Label runat="server" class="lbDangnhap" Text="  để xem giỏ hàng!"></asp:Label>
     </asp:Panel>

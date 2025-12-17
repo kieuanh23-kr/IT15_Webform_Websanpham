@@ -42,17 +42,25 @@
 
 
         .nav-btn {
-            width: 30px; height: 30px;
+            width: 34px;
+            height: 34px;
+            border: 2px solid #1b1bd6;
+            background: #fff;
+            color: #1b1bd6;
             border-radius: 6px;
-            border: 2px solid #2e2dfb;
-            background: #1712c9;
-            color: #fff;
-            font-weight: 900;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            text-decoration:none;
-            user-select:none;
+            text-decoration: none !important;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .nav-btn.disabled,
+        .nav-btn:disabled {
+            opacity: .4;
+            cursor: not-allowed;
+            pointer-events: none;
         }
 
 
@@ -128,6 +136,38 @@
             overflow:hidden;
             text-overflow:ellipsis;
         }
+
+        /*Tin tức ở trang 2*/
+        .news-grid-2x2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            margin-top: 14px;
+        }
+
+        .news-card {
+            display: block;
+            border: 2px solid #1b1bd6;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            text-decoration: none !important;
+        }
+
+        .news-img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .news-title {
+            padding: 14px 16px;
+            font-weight: 800;
+            color: #1b1bd6;
+            font-size: 22px;
+        }
+
 
         /*Tin tức Tuyển dụng*/
         .recruit-wrap{
@@ -213,9 +253,20 @@
             <asp:LinkButton ID="btnMonth" runat="server" CssClass="chip active" OnClick="Range_Click" CommandArgument="month">Trong tháng</asp:LinkButton>
         </div>
 
-        <div style="display:flex; gap:10px;">
-            <a class="nav-btn" href="javascript:void(0)">&#x2039;</a>
-            <a class="nav-btn" href="javascript:void(0)">&#x203A;</a>
+        <div class="nav-wrap">
+            <asp:LinkButton ID="btnStorePrev" runat="server"
+                CssClass="nav-btn"
+                OnClick="StorePrev_Click"
+                CausesValidation="false">
+                &#10094;
+            </asp:LinkButton>
+
+            <asp:LinkButton ID="btnStoreNext" runat="server"
+                CssClass="nav-btn"
+                OnClick="StoreNext_Click"
+                CausesValidation="false">
+                &#10095;
+            </asp:LinkButton>
         </div>
     </div>
 
@@ -256,6 +307,19 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+        <!-- TRANG 2 CÁC BÀI TIẾP THEO -->
+         <asp:Panel ID="pnStorePage2" runat="server" Visible="false">
+             <div class="news-grid-2x2">
+                 <asp:Repeater ID="rptStorePage2" runat="server">
+                     <ItemTemplate>
+                         <a class="news-card" href='<%# "TintucChitiet.aspx?id=" + Eval("Id") %>'>
+                             <img class="news-img" src='<%# Eval("ImageUrl") %>' alt="" />
+                             <div class="news-title"><%# Eval("Title") %></div>
+                         </a>
+                     </ItemTemplate>
+                 </asp:Repeater>
+             </div>
+         </asp:Panel>
 
         <asp:Panel ID="pnEmpty" runat="server" Visible="false" style="padding:10px; font-weight:800;">
             Chưa có bài viết nào.
@@ -266,22 +330,31 @@
     <div class="recruit-wrap">
         <div class="recruit-head">
             <div class="recruit-title">Tin tức tuyển dụng</div>
-            <div style="display:flex; gap:10px;">
-                <a class="nav-btn" href="javascript:void(0)">&#x2039;</a>
-                <a class="nav-btn" href="javascript:void(0)">&#x203A;</a>
+            <div class="nav-btns">
+                <asp:LinkButton ID="btnJobPrev" runat="server"
+                    CssClass="nav-btn"
+                    OnClick="btnJobPrev_Click">
+                    &#10094;
+                </asp:LinkButton>
+
+                <asp:LinkButton ID="btnJobNext" runat="server"
+                    CssClass="nav-btn"
+                    OnClick="btnJobNext_Click">
+                    &#10095;
+                </asp:LinkButton>
             </div>
         </div>
 
        
         <div class="recruit-grid">
-            <asp:Repeater ID="rptRecruit" runat="server">
+            <asp:Repeater ID="rptRecruitments" runat="server">
                 <ItemTemplate>
                     <div class="rc-card">
                         <div class="rc-top"><%# Eval("Position") %></div>
 
                         <div class="rc-body">
                             <div class="rc-label">Thời hạn tiếp nhận CV</div>
-                            <div class="rc-val"><%# Eval("DeadlineText") %></div>
+                            <div class="rc-val"><%# Eval("CvDeadline") %></div>
 
                             <div class="rc-label">Mức lương</div>
                             <div class="rc-val"><%# Eval("Salary") %></div>
@@ -308,9 +381,20 @@
             <asp:LinkButton ID="btnMonth2" runat="server" CssClass="chip active" OnClick="Range_Click2" CommandArgument="month">Trong tháng</asp:LinkButton>
         </div>
 
-        <div style="display:flex; gap:10px;">
-            <a class="nav-btn" href="javascript:void(0)">&#x2039;</a>
-            <a class="nav-btn" href="javascript:void(0)">&#x203A;</a>
+        <div class="nav-wrap">
+            <asp:LinkButton ID="btnHealthPrev" runat="server"
+                CssClass="nav-btn"
+                OnClick="HealthPrev_Click"
+                CausesValidation="false">
+                &#10094;
+            </asp:LinkButton>
+
+            <asp:LinkButton ID="btnHealthNext" runat="server"
+                CssClass="nav-btn"
+                OnClick="HealthNext_Click"
+                CausesValidation="false">
+                &#10095;
+            </asp:LinkButton>
         </div>
     </div>
 
@@ -351,6 +435,20 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
+
+        <!--Trang 2-->
+        <asp:Panel ID="pnHealthPage2" runat="server" Visible="false">
+            <div class="news-grid-2x2">
+                <asp:Repeater ID="rptHealthPage2" runat="server">
+                    <ItemTemplate>
+                        <a class="news-card" href='<%# "TintucChitiet.aspx?id=" + Eval("Id") %>'>
+                            <img class="news-img" src='<%# Eval("ImageUrl") %>' alt="" />
+                            <div class="news-title"><%# Eval("Title") %></div>
+                        </a>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </asp:Panel>
 
         <asp:Panel ID="pnEmpty2" runat="server" Visible="false" style="padding:10px; font-weight:800;">
             Chưa có bài viết nào.

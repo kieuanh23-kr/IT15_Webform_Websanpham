@@ -47,7 +47,7 @@
                     <div class="p-divider"></div>
                     <div class="p-body">
                         <div class="p-name"><%# Eval("Name") %></div>
-                        <div class="p-sub"><%# Eval("Warranty") %></div>
+                        <div class="p-sub"><%# Eval("Description") %></div>
                         <div class="p-old"><%# FormatMoney(Eval("OldPrice")) %></div>
                         <p class="p-price"><%# FormatMoney(Eval("Price")) %></p>
                     </div>

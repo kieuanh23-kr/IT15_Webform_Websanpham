@@ -168,15 +168,15 @@
              </asp:LinkButton>
 
              <div class="d-flex ms-auto gap-2">
-             <asp:LinkButton ID="btnCreate" runat="server" CssClass="btn btn-create"
-                    OnClick="btnCreate_Click">
-                    Thêm mới
-             </asp:LinkButton>
-             <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-del"
-                 OnClientClick="return confirm('Bạn chắc chắn muốn xóa các sản phẩm đã chọn?');"
-                 OnClick="btnDelete_Click">
-                 Xóa
-             </asp:LinkButton>
+                 <asp:LinkButton ID="btnCreate" runat="server" CssClass="btn btn-create"
+                        OnClick="btnCreate_Click">
+                        Thêm mới
+                 </asp:LinkButton>
+                 <asp:LinkButton ID="btnDelete" runat="server" CssClass="btn btn-del"
+                     OnClientClick="return confirm('Bạn chắc chắn muốn xóa các sản phẩm đã chọn?');"
+                     OnClick="btnDelete_Click">
+                     Xóa
+                 </asp:LinkButton>
              </div>
          </div>
 
@@ -201,7 +201,7 @@
                      <asp:TemplateField HeaderText="Mã sản phẩm" HeaderStyle-BackColor="#d9d9d9">
                          <ItemTemplate>
                              <a class="order-id-link" style="margin-left:40px"
-                                href='<%# "DonhangChitiet.aspx?id=" + Eval("Proc_ID") %>'>
+                                href='<%# "SanphamChitiet.aspx?id=" + Eval("Proc_ID") %>'>
                                  <%# Eval("Proc_ID") %>
                              </a>
                          </ItemTemplate>

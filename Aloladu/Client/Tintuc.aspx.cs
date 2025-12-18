@@ -549,16 +549,13 @@ namespace Aloladu.Client
         {
             string img = r["ImageUrl"]?.ToString();
             if (string.IsNullOrWhiteSpace(img))
-                img = "Aloladu/Images/download.png";
-
-            img = img.Trim().Replace("\\", "/");
-
-            if (!img.StartsWith("~/") && !img.StartsWith("/"))
+            { img = "20251218161312_anh-meme-meo-avt.jpg"; }
+            else
             {
-                if (!img.Contains("/")) img = "Aloladu/Images/" + img; 
-                img = "~/" + img;
+                img = System.IO.Path.GetFileName(img);
             }
-            r["ImageUrl"] = ResolveUrl(img);
+            
+            r["ImageUrl"] = ResolveUrl("~/Images_News/"+img);
         }
     }
 }

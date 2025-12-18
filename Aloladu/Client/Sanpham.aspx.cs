@@ -69,11 +69,11 @@ namespace Aloladu.Client
                 }
 
                 string sql = @"
-SELECT Id, Name, Description, OldPrice, Price, ImageUrl
-FROM Products
-WHERE BrandName = @b
-ORDER BY Id DESC
-OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
+                    SELECT Id, Name, Description, OldPrice, Price, ImageUrl
+                    FROM Products
+                    WHERE BrandName = @b
+                    ORDER BY Id DESC
+                    OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@b", brandName);
@@ -87,8 +87,15 @@ OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
                 foreach (DataRow r in dt.Rows)
                 {
                     string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
-                    if (string.IsNullOrWhiteSpace(img)) img = "Images/download.png";
-                    r["ImageUrl"] = img.Replace("\\", "/");
+                    if (string.IsNullOrWhiteSpace(img))
+                    {
+                        img = "download.png";
+                    }
+                    else
+                    {
+                        img = System.IO.Path.GetFileName(img);
+                    }
+                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rpt.DataSource = dt;
@@ -163,11 +170,16 @@ OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    if (r["ImageUrl"] == DBNull.Value || string.IsNullOrWhiteSpace(r["ImageUrl"].ToString()))
-                        r["ImageUrl"] = "Images/download.png";
-
-                    if (r["Warranty"] == DBNull.Value)
-                        r["Warranty"] = "";
+                    string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
+                    if (string.IsNullOrWhiteSpace(img))
+                    {
+                        img = "download.png";
+                    }
+                    else
+                    {
+                        img = System.IO.Path.GetFileName(img);
+                    }
+                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rptTopSelling.DataSource = dt;
@@ -190,11 +202,16 @@ OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    if (r["ImageUrl"] == DBNull.Value || string.IsNullOrWhiteSpace(r["ImageUrl"].ToString()))
-                        r["ImageUrl"] = "Images/download.png";
-
-                    if (r["Warranty"] == DBNull.Value)
-                        r["Warranty"] = "";
+                    string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
+                    if (string.IsNullOrWhiteSpace(img))
+                    {
+                        img = "download.png";
+                    }
+                    else
+                    {
+                        img = System.IO.Path.GetFileName(img);
+                    }
+                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rptTopDeals.DataSource = dt;

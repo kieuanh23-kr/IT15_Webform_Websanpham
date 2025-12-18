@@ -51,10 +51,20 @@ namespace Aloladu.Admin
                 cmd.Connection = conn;
 
                 // nếu keyword trống -> show all (không thêm điều kiện)
+                
                 if (!string.IsNullOrEmpty(keyword))
                 {
-                    sql += $" AND {safeField} LIKE @kw ";
-                    cmd.Parameters.AddWithValue("@kw", "%" + keyword + "%");
+                    if (ddlField.SelectedValue == "Proc_Cat")
+                    {
+                        String CategoryKey = GetCategoryKey(keyword);
+                        sql += $" AND {safeField} = @kw ";
+                        cmd.Parameters.AddWithValue("@kw", CategoryKey);
+                    }
+                    else
+                    {
+                        sql += $" AND {safeField} LIKE @kw ";
+                        cmd.Parameters.AddWithValue("@kw", "%" + keyword + "%");
+                    }
                 }
 
                 sql += " ORDER BY Proc_ID DESC ";
@@ -92,7 +102,7 @@ namespace Aloladu.Admin
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Sanpham_Edit.aspx");
+            Response.Redirect("SanphamChitiet.aspx");
         }
         protected void btnDelete_Click(object sender, EventArgs e)
         {
@@ -173,5 +183,47 @@ namespace Aloladu.Admin
                     return "Khác";
             }
         }
+
+        protected string GetCategoryKey(string procCat)
+        {
+            string a = procCat.ToLower().Trim();
+            string dobep = "đồ bếp";
+            string donha = "dọn nhà";  
+            string saykho = "sấy khô";
+            string dongho = "đồng hồ";
+            string bongden = "bóng đèn";
+            string giatla = "giặt là";
+
+
+            if(dobep.Contains(a))
+            {
+                return "dobep";
+            }
+            else if(donha.Contains(a))
+            {
+                return "donha";
+            }
+            else if(saykho.Contains(a))
+            {
+                return "saykho";
+            }
+            else if(dongho.Contains(a))
+            {
+                return "dongho";
+            }
+            else if(bongden.Contains(a))
+            {
+                return "bongden";
+            }
+            else if(giatla.Contains(a))
+            {
+                return "giatla";
+            }
+            else
+            {
+                return "khac";
+            }
+        }
+
     }
 }

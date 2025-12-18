@@ -113,7 +113,7 @@ namespace Aloladu.Client
             {
                 // SQL Server 2012+ hỗ trợ OFFSET/FETCH
                 string sql = $@"
-                    SELECT Id, Name, Warranty, OldPrice, Price, ImageUrl
+                    SELECT Id, Name, Description, OldPrice, Price, ImageUrl
                     FROM Products
                     WHERE (@cat = '' OR CategoryKey = @cat)
                       AND (@brand = 'all' OR BrandName = @brand)
@@ -132,11 +132,16 @@ namespace Aloladu.Client
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    if (r["ImageUrl"] == DBNull.Value || string.IsNullOrWhiteSpace(r["ImageUrl"].ToString()))
-                        r["ImageUrl"] = "Images/download.png";
-
-                    if (r["Warranty"] == DBNull.Value)
-                        r["Warranty"] = "";
+                    string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
+                    if (string.IsNullOrWhiteSpace(img))
+                    {
+                        img = "download.png";
+                    }
+                    else
+                    {
+                        img = System.IO.Path.GetFileName(img);
+                    }
+                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rptCatProducts.DataSource = dt;

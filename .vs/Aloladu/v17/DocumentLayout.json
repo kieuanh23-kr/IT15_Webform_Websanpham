@@ -1,30 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\",
+  "WorkspaceRootPath": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\admin\\donhangchitiet.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\donhangchitiet.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\admin\\tintucsuckhoe.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\tintucsuckhoe.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\admin\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\sanpham.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\admin\\tintucsuckhoechitiet.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\tintucsuckhoechitiet.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\admin\\adminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\admin\\tintucsuckhoechitiet.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\tintucsuckhoechitiet.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\admin\\tintucsuckhoe.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\tintucsuckhoe.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\pc\\source\\repos\\web form\\it15_webform_websanpham\\aloladu\\admin\\adminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
       "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\adminmaster.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\admin\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\sanpham.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\admin\\donhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\donhang.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|c:\\users\\kieua\\source\\repos\\webform\\aloladu\\aloladu\\admin\\donhang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{21E89A96-373C-451F-858E-293C69AB549E}|Aloladu\\Aloladu.csproj|solutionrelative:aloladu\\admin\\donhang.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,85 +30,80 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonhangChitiet.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\DonhangChitiet.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Admin\\DonhangChitiet.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\DonhangChitiet.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Admin\\DonhangChitiet.aspx.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAwwGEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "TintucSuckhoeChitiet.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoeChitiet.aspx.cs",
+              "RelativeDocumentMoniker": "Aloladu\\Admin\\TintucSuckhoeChitiet.aspx.cs",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoeChitiet.aspx.cs",
+              "RelativeToolTip": "Aloladu\\Admin\\TintucSuckhoeChitiet.aspx.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAkwF0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T18:41:19.776Z",
+              "WhenOpened": "2025-12-18T09:34:31.175Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "AdminMaster.Master",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\AdminMaster.Master",
-              "RelativeDocumentMoniker": "Aloladu\\Admin\\AdminMaster.Master",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\AdminMaster.Master",
-              "RelativeToolTip": "Aloladu\\Admin\\AdminMaster.Master",
+              "Title": "TintucSuckhoeChitiet.aspx",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoeChitiet.aspx",
+              "RelativeDocumentMoniker": "Aloladu\\Admin\\TintucSuckhoeChitiet.aspx",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoeChitiet.aspx",
+              "RelativeToolTip": "Aloladu\\Admin\\TintucSuckhoeChitiet.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-17T18:34:48.933Z",
+              "WhenOpened": "2025-12-18T09:32:47.996Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Sanpham.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Sanpham.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Admin\\Sanpham.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Sanpham.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Admin\\Sanpham.aspx.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAA9wF8AAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "TintucSuckhoe.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoe.aspx.cs",
+              "RelativeDocumentMoniker": "Aloladu\\Admin\\TintucSuckhoe.aspx.cs",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoe.aspx.cs",
+              "RelativeToolTip": "Aloladu\\Admin\\TintucSuckhoe.aspx.cs",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAmwK4AAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T17:59:30.869Z",
+              "WhenOpened": "2025-12-18T09:32:10.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Sanpham.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Sanpham.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Admin\\Sanpham.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Sanpham.aspx",
-              "RelativeToolTip": "Aloladu\\Admin\\Sanpham.aspx",
+              "Title": "TintucSuckhoe.aspx",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoe.aspx",
+              "RelativeDocumentMoniker": "Aloladu\\Admin\\TintucSuckhoe.aspx",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\TintucSuckhoe.aspx",
+              "RelativeToolTip": "Aloladu\\Admin\\TintucSuckhoe.aspx",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-17T17:42:26.141Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Donhang.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Donhang.aspx.cs",
-              "RelativeDocumentMoniker": "Aloladu\\Admin\\Donhang.aspx.cs",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Donhang.aspx.cs",
-              "RelativeToolTip": "Aloladu\\Admin\\Donhang.aspx.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-17T17:42:44.472Z",
+              "WhenOpened": "2025-12-18T09:27:41.283Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Donhang.aspx",
-              "DocumentMoniker": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Donhang.aspx",
-              "RelativeDocumentMoniker": "Aloladu\\Admin\\Donhang.aspx",
-              "ToolTip": "C:\\Users\\kieua\\source\\repos\\WebForm\\Aloladu\\Aloladu\\Admin\\Donhang.aspx",
-              "RelativeToolTip": "Aloladu\\Admin\\Donhang.aspx",
+              "Title": "AdminMaster.Master",
+              "DocumentMoniker": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\AdminMaster.Master",
+              "RelativeDocumentMoniker": "Aloladu\\Admin\\AdminMaster.Master",
+              "ToolTip": "C:\\Users\\PC\\Source\\Repos\\Web Form\\IT15_Webform_Websanpham\\Aloladu\\Admin\\AdminMaster.Master",
+              "RelativeToolTip": "Aloladu\\Admin\\AdminMaster.Master",
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2025-12-17T14:13:06.025Z",
+              "WhenOpened": "2025-12-18T09:31:26.136Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }

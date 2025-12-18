@@ -134,13 +134,13 @@
                     <a class="nav-item" href="Donhang.aspx">Đơn hàng</a>
                     <a class="nav-item" href="Sanpham.aspx">Sản phẩm</a>
 
-                    <a class="nav-item has-sub" href="News.aspx">
+                    <a class="nav-item has-sub" href="TintucCuahang.aspx">
                         <span>Tin tức</span>
                         <span class="chev">&gt;</span>
                     </a>
                     <div class="sub-nav">
-                        <a class="sub-item-1" href="News_Store.aspx">Cửa hàng</a>
-                        <a class="sub-item-2" href="News_Health.aspx">Sức khỏe</a>
+                        <a class="sub-item-1" href="TintucCuahang.aspx">Cửa hàng</a>
+                        <a class="sub-item-2" href="TintucSuckhoe.aspx">Sức khỏe</a>
                         <a class="sub-item" href="News_Career.aspx">Tuyển dụng</a>
                     </div>
 

@@ -162,17 +162,13 @@ namespace Aloladu.Client
         private string ResolveImg(string img)
         {
             if (string.IsNullOrWhiteSpace(img))
-                img = "Images/download.png"; // đổi nếu ảnh bạn nằm Client/Images
-
-            img = img.Trim().Replace("\\", "/");
-
-            if (!img.StartsWith("~/") && !img.StartsWith("/"))
+            { img = "20251218161312_anh-meme-meo-avt.jpg"; }
+            else
             {
-                if (!img.Contains("/")) img = "Images/" + img;
-                img = "~/" + img;
+                img = System.IO.Path.GetFileName(img);
             }
 
-            return ResolveUrl(img);
+            return ResolveUrl("~/Images_News/" + img);
         }
     }
 }

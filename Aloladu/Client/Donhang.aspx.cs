@@ -208,16 +208,12 @@ namespace Aloladu.Client
                     // ảnh
                     string img = r["ImageUrl"]?.ToString();
                     if (string.IsNullOrWhiteSpace(img))
-                        img = "Client/Images/download.png"; // ✅ đúng folder hiện tại của bạn
-
-                    img = img.Trim().Replace("\\", "/");
-
-                    if (!img.StartsWith("~/") && !img.StartsWith("/"))
+                    { img = "download.png"; }
+                    else
                     {
-                        if (!img.Contains("/")) img = "Client/Images/" + img; // nếu db chỉ lưu tên file
-                        img = "~/" + img;
+                        img = System.IO.Path.GetFileName(img);
                     }
-                    r["ImageUrl"] = ResolveUrl(img);
+                    r["ImageUrl"] = ResolveUrl("~/Images/"+img);
                 }
 
                 pnEmpty.Visible = dt.Rows.Count == 0;

@@ -78,6 +78,15 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.Repeater rptFeatured;
 
         /// <summary>
+        /// pnLatest2_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnLatest2_1;
+
+        /// <summary>
         /// rptLatest2 control.
         /// </summary>
         /// <remarks>
@@ -202,6 +211,15 @@ namespace Aloladu.Client
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rptFeatured2;
+
+        /// <summary>
+        /// pnLatest2_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnLatest2_2;
 
         /// <summary>
         /// rptLatest2_2 control.

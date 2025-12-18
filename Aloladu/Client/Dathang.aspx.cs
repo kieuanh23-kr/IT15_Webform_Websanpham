@@ -55,7 +55,7 @@ namespace Aloladu.Client
               
                 string sql = @"
                     SELECT TOP 1
-                        Id, Name, CategoryKey, BrandName, Warranty,
+                        Id, Name, CategoryKey, BrandName,
                         OldPrice, Price, ImageUrl,Description
                     FROM Products
                     WHERE Id = @id"; 
@@ -207,24 +207,18 @@ namespace Aloladu.Client
 
 
 
-        private string ToWebImageUrl(string dbValue)
+        private string ToWebImageUrl(string img)
         {
-            if (string.IsNullOrWhiteSpace(dbValue))
-                dbValue = "Client/Images/download.png"; // fallback đúng vị trí thật của bạn
+            if (string.IsNullOrWhiteSpace(img))
+            { 
+                img = "download.png"; 
+            }
 
-            var s = dbValue.Trim().Replace("\\", "/");
-
-            // Nếu lỡ bị lặp Client/Client thì sửa
-            while (s.StartsWith("Client/Client/", StringComparison.OrdinalIgnoreCase))
-                s = s.Substring("Client/".Length);
-
-            if (s.StartsWith("~/") || s.StartsWith("/"))
-                return ResolveUrl(s);
-
-            if (!s.Contains("/"))
-                s = "Client/Images/" + s; // nếu chỉ có tên file
-
-            return ResolveUrl("~/" + s);
+            else
+            {
+                img = System.IO.Path.GetFileName(img);
+            }
+            return ResolveUrl("~/Images/" + img);
         }
 
 

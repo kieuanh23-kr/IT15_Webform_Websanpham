@@ -122,7 +122,6 @@
 
           <div class="field">
             <label>Ngày sinh</label>
-            <!-- type=date để nhập dễ, bạn vẫn có thể hiển thị dd/MM/yyyy nếu thích -->
             <asp:TextBox ID="txtBirth" runat="server" CssClass="tb" TextMode="Date" />
           </div>
 

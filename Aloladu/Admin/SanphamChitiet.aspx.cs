@@ -29,6 +29,7 @@ namespace Aloladu.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
                 LoadProducts();
@@ -172,8 +173,7 @@ namespace Aloladu.Admin
                     cmd.Parameters.AddWithValue("@ImageUrl", string.IsNullOrEmpty(imageUrl) ? (object)DBNull.Value : imageUrl);
 
                     conn.Open();
-                    int n = 0;
-                    n = (int)cmd.ExecuteScalar();
+                    int n = cmd.ExecuteNonQuery();
                     if (n <= 0)
                     {
                         ShowMsg("Thêm mới thất bại.", "red");
@@ -182,8 +182,7 @@ namespace Aloladu.Admin
                     else
                     {
                         ShowMsg("Thêm mới thành công!", "green");
-                        // Redirect với ID mới để load đầy đủ thông tin
-                        Response.Redirect("SanphamChitiet.aspx?id=" + n);
+             
                     }
                 }
                 return; 

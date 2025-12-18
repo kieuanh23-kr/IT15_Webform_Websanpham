@@ -141,10 +141,10 @@
                     <div class="sub-nav">
                         <a class="sub-item-1" href="TintucCuahang.aspx">Cửa hàng</a>
                         <a class="sub-item-2" href="TintucSuckhoe.aspx">Sức khỏe</a>
-                        <a class="sub-item" href="News_Career.aspx">Tuyển dụng</a>
+                        <a class="sub-item" href="TintucTuyendung.aspx">Tuyển dụng</a>
                     </div>
 
-                    <a class="nav-item" id="end" href="Customers.aspx">Khách hàng</a>
+                    <a class="nav-item" id="end" href="Khachhang.aspx">Khách hàng</a>
                 </nav>
             </aside>
 
@@ -154,7 +154,7 @@
                 <div class="admin-topbar " >
 
                     <asp:LinkButton ID="btnLogout" runat="server"
-                        CssClass="btn logout">
+                        CssClass="btn logout" OnClick="btnLogout_Click">
                         Đăng xuất
                     </asp:LinkButton>
                 </div>

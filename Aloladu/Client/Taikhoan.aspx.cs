@@ -85,13 +85,11 @@ namespace Aloladu.Client
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            // quay lại trang trước nếu có
             if (Request.UrlReferrer != null)
             {
                 Response.Redirect(Request.UrlReferrer.ToString());
                 return;
             }
-
             Response.Redirect("Sanpham.aspx");
         }
 

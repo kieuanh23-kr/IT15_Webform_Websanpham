@@ -293,20 +293,22 @@
         </asp:Panel>
 
         <!-- 2 BÀI MỚI NHẤT -->
-        <div class="news-grid">
-            <asp:Repeater ID="rptLatest2" runat="server">
-                <ItemTemplate>
-                    <a href='<%# "TintucChitiet.aspx?id=" + Eval("Id") %>' style="text-decoration:none; color:inherit;">
-                        <div class="news-card">
-                            <div class="nc-img">
-                                <img src="<%# Eval("ImageUrl") %>" alt="img" />
+        <asp:Panel ID="pnLatest2_1" runat="server" Visible="false">
+            <div class="news-grid">
+                <asp:Repeater ID="rptLatest2" runat="server">
+                    <ItemTemplate>
+                        <a href='<%# "TintucChitiet.aspx?id=" + Eval("Id") %>' style="text-decoration:none; color:inherit;">
+                            <div class="news-card">
+                                <div class="nc-img">
+                                    <img src="<%# Eval("ImageUrl") %>" alt="img" />
+                                </div>
+                                <div class="nc-title"><%# Eval("Title") %></div>
                             </div>
-                            <div class="nc-title"><%# Eval("Title") %></div>
-                        </div>
-                    </a>
-                </ItemTemplate>
-            </asp:Repeater>
-        </div>
+                        </a>
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </asp:Panel>
         <!-- TRANG 2 CÁC BÀI TIẾP THEO -->
          <asp:Panel ID="pnStorePage2" runat="server" Visible="false">
              <div class="news-grid-2x2">
@@ -421,6 +423,7 @@
         </asp:Panel>
 
         <!-- 2 BÀI MỚI NHẤT -->
+        <asp:Panel ID="pnLatest2_2" runat="server" Visible="false">
         <div class="news-grid">
             <asp:Repeater ID="rptLatest2_2" runat="server">
                 <ItemTemplate>
@@ -435,7 +438,7 @@
                 </ItemTemplate>
             </asp:Repeater>
         </div>
-
+        </asp:Panel>
         <!--Trang 2-->
         <asp:Panel ID="pnHealthPage2" runat="server" Visible="false">
             <div class="news-grid-2x2">

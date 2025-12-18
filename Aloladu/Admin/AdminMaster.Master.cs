@@ -14,5 +14,11 @@ namespace Aloladu.Admin
             Session.Clear();
             Session.Abandon();
         }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Dangnhap.aspx");
+        }
     }
 }

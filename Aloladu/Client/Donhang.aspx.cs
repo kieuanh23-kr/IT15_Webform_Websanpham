@@ -126,9 +126,7 @@ namespace Aloladu.Client
 
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                // ⚠️ Nếu tên cột khác: sửa lại theo DB bạn
-                // Orders: ProductId, Quantity, TotalAmount, Status, CreatedAt
-                // Products: Name, BrandName, CategoryKey, Warranty, OldPrice, Price, ImageUrl
+              
                 string sql = @"
                                 SELECT
                                     o.Id,
@@ -140,7 +138,6 @@ namespace Aloladu.Client
                                     p.Name        AS ProductName,
                                     p.BrandName,
                                     p.CategoryKey,
-                                    p.Warranty,
                                     p.OldPrice,
                                     p.Price,
                                     p.ImageUrl,

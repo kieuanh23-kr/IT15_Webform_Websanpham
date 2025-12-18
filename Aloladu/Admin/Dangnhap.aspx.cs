@@ -12,11 +12,7 @@ namespace Aloladu.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Nếu đã đăng nhập rồi thì vào thẳng 
-            if (Session["ADMIN_AUTH"] != null && (bool)Session["ADMIN_AUTH"] == true)
-            {
-                Response.Redirect("Donhang.aspx");
-            }
+            
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

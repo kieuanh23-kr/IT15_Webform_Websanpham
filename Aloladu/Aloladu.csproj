@@ -71,12 +71,16 @@
     <Content Include="Admin\Dangnhap.aspx" />
     <Content Include="Admin\Donhang.aspx" />
     <Content Include="Admin\DonhangChitiet.aspx" />
+    <Content Include="Admin\Khachhang.aspx" />
+    <Content Include="Admin\KhachhangChitiet.aspx" />
     <Content Include="Admin\Sanpham.aspx" />
     <Content Include="Admin\SanphamChitiet.aspx" />
     <Content Include="Admin\TintucCuahangChitiet.aspx" />
     <Content Include="Admin\TintucCuahang.aspx" />
     <Content Include="Admin\TintucSuckhoe.aspx" />
     <Content Include="Admin\TintucSuckhoeChitiet.aspx" />
+    <Content Include="Admin\TintucTuyendung.aspx" />
+    <Content Include="Admin\TintucTuyendungChitiet.aspx" />
     <Content Include="Client\Category.aspx" />
     <Content Include="Client\ClientStyle.css" />
     <Content Include="Client\Dangky.aspx" />
@@ -122,6 +126,20 @@
     <Compile Include="Admin\DonhangChitiet.aspx.designer.cs">
       <DependentUpon>DonhangChitiet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Khachhang.aspx.cs">
+      <DependentUpon>Khachhang.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Khachhang.aspx.designer.cs">
+      <DependentUpon>Khachhang.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KhachhangChitiet.aspx.cs">
+      <DependentUpon>KhachhangChitiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KhachhangChitiet.aspx.designer.cs">
+      <DependentUpon>KhachhangChitiet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Sanpham.aspx.cs">
       <DependentUpon>Sanpham.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -163,6 +181,20 @@
     </Compile>
     <Compile Include="Admin\TintucSuckhoeChitiet.aspx.designer.cs">
       <DependentUpon>TintucSuckhoeChitiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TintucTuyendung.aspx.cs">
+      <DependentUpon>TintucTuyendung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TintucTuyendung.aspx.designer.cs">
+      <DependentUpon>TintucTuyendung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TintucTuyendungChitiet.aspx.cs">
+      <DependentUpon>TintucTuyendungChitiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TintucTuyendungChitiet.aspx.designer.cs">
+      <DependentUpon>TintucTuyendungChitiet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Client\Category.aspx.cs">
       <DependentUpon>Category.aspx</DependentUpon>
@@ -271,10 +303,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

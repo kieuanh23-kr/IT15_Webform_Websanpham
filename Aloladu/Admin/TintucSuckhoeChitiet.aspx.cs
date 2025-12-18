@@ -145,7 +145,7 @@ namespace Aloladu.Admin
             if (NestId <= 0)
             {
                 const string sqlInsert = @"INSERT INTO  News ( Title, Content, Category, ImageUrl, IsFeatured)
-                                            VALUES (@Nest_Title, @Nest_Cont, 'suc-khoe', @Nest_Ima,@Nest_Featured)
+                                            VALUES (@Nest_Title, @Nest_Cont, 'suc-khoe', @Nest_Ima,@Nest_Featured);
                                             SELECT SCOPE_IDENTITY();";
 
                 using (var conn = new SqlConnection(connStr))
@@ -169,7 +169,6 @@ namespace Aloladu.Admin
                     if (n > 0)
                     {
                         ShowMsg("Thêm mới thành công!", "green");
-                        Response.Redirect("TintucCuahangChitiet.aspx?id=" + n);
                         return;
                     }
                     else
@@ -257,7 +256,7 @@ namespace Aloladu.Admin
                 catch { lblMsg.Text = "Không tìm thấy ảnh xóa"; }
             }
 
-            Response.Redirect("TintucCuahang.aspx");
+            Response.Redirect("TintucSuckhoe.aspx");
         }
 
         private void ShowMsg(string msg, string color)

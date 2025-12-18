@@ -151,6 +151,7 @@ namespace Aloladu.Client
                 {
                     // show featured + latest2
                     pnFeatured.Visible = dtFeatured.Rows.Count > 0;
+                    pnLatest2_1.Visible = true;
                     rptFeatured.DataSource = dtFeatured;
                     rptFeatured.DataBind();
 
@@ -163,10 +164,9 @@ namespace Aloladu.Client
                 {
                     // hide block page1
                     pnFeatured.Visible = false;
-                    // nếu bạn có panel bọc latest2 thì set Visible=false luôn (tuỳ UI bạn)
-                    // vd: pnLatest2.Visible = false;
+                    pnLatest2_1.Visible = false;
 
-                    // page>=2: 4 bài / trang (offset bắt đầu từ page 2 => (page-2)*4)
+
                     int offset = (StorePage - 2) * 4;
 
                     // build điều kiện NOT IN động để tránh trùng 3 bài page1
@@ -363,6 +363,7 @@ namespace Aloladu.Client
                 {
                     // show featured + latest2
                     pnFeatured2.Visible = dtFeatured.Rows.Count > 0;
+                    pnLatest2_2.Visible = true;
                     rptFeatured2.DataSource = dtFeatured;
                     rptFeatured2.DataBind();
 
@@ -373,15 +374,14 @@ namespace Aloladu.Client
                 }
                 else
                 {
-                    // hide block page1
-                    pnFeatured.Visible = false;
-                    // nếu bạn có panel bọc latest2 thì set Visible=false luôn (tuỳ UI bạn)
-                    // vd: pnLatest2.Visible = false;
+                
+                    pnFeatured2.Visible = false;
+                    pnLatest2_2.Visible = false;
 
-                    // page>=2: 4 bài / trang (offset bắt đầu từ page 2 => (page-2)*4)
+
                     int offset = (HealthPage - 2) * 4;
 
-                    // build điều kiện NOT IN động để tránh trùng 3 bài page1
+           
                     string notInSql = "";
                     for (int i = 0; i < excludeIds.Count; i++)
                         notInSql += (i == 0 ? "" : ",") + "@ex" + i;
@@ -413,11 +413,11 @@ namespace Aloladu.Client
                     rptHealthPage2.DataSource = dtPage2;
                     rptHealthPage2.DataBind();
 
-                    // Nếu page hiện tại rỗng => lùi lại 1 trang
+               
                     if (dtPage2.Rows.Count == 0 && HealthPage > 1)
                     {
                         HealthPage--;
-                        BindStoreNews();
+                        BindHealthNews();
                         return;
                     }
                 }
@@ -549,7 +549,9 @@ namespace Aloladu.Client
         {
             string img = r["ImageUrl"]?.ToString();
             if (string.IsNullOrWhiteSpace(img))
-            { img = "20251218161312_anh-meme-meo-avt.jpg"; }
+            { 
+                img = "20251218161312_anh-meme-meo-avt.jpg"; 
+            }
             else
             {
                 img = System.IO.Path.GetFileName(img);

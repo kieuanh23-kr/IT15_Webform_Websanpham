@@ -218,13 +218,23 @@
             display: flex;
             gap: 25px;
             overflow-x: auto;
-            padding: 0 10px 10px 10px; /* Thêm padding-bottom */
+            padding: 0 8px 10px 8px; /* Thêm padding-bottom */
             scroll-behavior: smooth;
             justify-content: center;
+
+        }
+        .best-row .p-name {
+            font-weight: 700;
+            font-size: 15px;
+            color: #1d1bd9;
+            margin: 2px 0 2px;
+            white-space: nowrap; /* KHÔNG cho xuống dòng */
+            overflow: hidden; /* Ẩn phần dư */
+            text-overflow: ellipsis;
         }
         .best-item {
-            flex: 0 0 220px;
-            min-width: 220px;
+            flex: 0 0 230px;
+            min-width: 200px;
         }
 
 
@@ -244,42 +254,42 @@
     <div class="cat-grid">
         <a class="cat-card" href="Category.aspx?cat=dobep">
             <div class="thumb">
-                <img src="Images/download.png" alt="Đồ bếp" />
+                <img src="<%= ResolveUrl("~/Images/do-bep.png") %>" alt="Đồ bếp" />
             </div>
             <div class="label">Đồ bếp</div>
         </a>
 
         <a class="cat-card" href="Category.aspx?cat=donha">
             <div class="thumb">
-                <img src="Images/download.png" alt="Dọn nhà" />
+                <img src="<%= ResolveUrl("~/Images/don-nha.png") %>" alt="Dọn nhà" />
             </div>
             <div class="label">Dọn nhà</div>
         </a>
 
         <a class="cat-card" href="Category.aspx?cat=saykho">
             <div class="thumb">
-                <img src="Images/download.png" alt="Sấy khô" />
+                <img src="<%= ResolveUrl("~/Images/may-say.png") %>" alt="Sấy khô" />
             </div>
             <div class="label">Sấy khô</div>
         </a>
 
         <a class="cat-card" href="Category.aspx?cat=dongho">
             <div class="thumb">
-                <img src="Images/download.png" alt="Đồng hồ" />
+                <img src="<%= ResolveUrl("~/Images/dong-ho.png") %>" alt="Đồng hồ" />
             </div>
             <div class="label">Đồng hồ</div>
         </a>
 
         <a class="cat-card" href="Category.aspx?cat=bongden">
             <div class="thumb">
-                <img src="Images/download.png" alt="Bóng đèn" />
+                <img src="<%= ResolveUrl("~/Images/bong-den.png") %>" alt="Bóng đèn" />
             </div>
             <div class="label">Bóng đèn</div>
         </a>
 
         <a class="cat-card" href="Category.aspx?cat=giatla">
             <div class="thumb">
-                <img src="Images/download.png" alt="Giặt là" />
+                <img src="<%= ResolveUrl("~/Images/ban-la.png") %>" alt="Giặt là" />
             </div>
             <div class="label">Giặt là</div>
         </a>

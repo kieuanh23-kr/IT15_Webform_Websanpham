@@ -208,8 +208,8 @@
                      </asp:TemplateField>
 
                      <asp:BoundField DataField="Proc_Name" HeaderText="Sản phẩm" HeaderStyle-BackColor="#d9d9d9"/>
-                     <asp:BoundField DataField="Proc_OldPrice" HeaderText="Giá gốc" HeaderStyle-BackColor="#d9d9d9"/>
-                     <asp:BoundField DataField="Proc_Price" HeaderText="Giá bán" HeaderStyle-BackColor="#d9d9d9"/>
+                     <asp:BoundField DataField="Proc_OldPrice" HeaderText="Giá gốc" HeaderStyle-BackColor="#d9d9d9" DataFormatString="{0:N0}" HtmlEncode="false"/>
+                     <asp:BoundField DataField="Proc_Price" HeaderText="Giá bán" HeaderStyle-BackColor="#d9d9d9"  DataFormatString="{0:N0}" HtmlEncode="false"/>
                      <asp:TemplateField HeaderText="Danh mục" HeaderStyle-BackColor="#d9d9d9">
                         <ItemTemplate>
                             <%# GetCategoryName(Eval("Proc_Cat").ToString()) %>

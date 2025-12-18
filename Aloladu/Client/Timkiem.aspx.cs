@@ -176,8 +176,7 @@ namespace Aloladu.Client
             {
                 conn.Open();
 
-                // Category: cua_hang + suc_khoe (tuỳ bạn lưu)
-                // Ở đây mình lọc theo 2 loại: 'cua_hang' và 'suc_khoe'
+                //Lọc theo 2 loại: 'cua_hang' và 'suc_khoe'
                 string sql = @"
                         SELECT Id, Title, Content, Category, ImageUrl, CreatedAt
                         FROM News
@@ -203,7 +202,7 @@ namespace Aloladu.Client
 
                 dt.Columns.Add("ImageUrlFixed", typeof(string));
                 foreach (DataRow r in dt.Rows)
-                    r["ImageUrlFixed"] = FixImageUrl(r["ImageUrl"]?.ToString());
+                    r["ImageUrlFixed"] = FixImageUrl_News(r["ImageUrl"]?.ToString());
 
                 pnEmptyNews.Visible = dt.Rows.Count == 0;
                 rptNews.DataSource = dt;
@@ -279,17 +278,29 @@ namespace Aloladu.Client
         private string FixImageUrl(string img)
         {
             if (string.IsNullOrWhiteSpace(img))
-                img = "Client/Images/download.png";
-
-            img = img.Trim().Replace("\\", "/");
-
-            if (!img.StartsWith("~/") && !img.StartsWith("/"))
+            { 
+                img = "download.png"; 
+            }
+            else
             {
-                if (!img.Contains("/")) img = "Client/Images/" + img;
-                img = "~/" + img;
+                img = System.IO.Path.GetFileName(img);
             }
 
-            return ResolveUrl(img);
+            return ResolveUrl("~/Images/" + img);
+        }
+
+        private string FixImageUrl_News(string img)
+        {
+            if (string.IsNullOrWhiteSpace(img))
+            {
+                img = "20251218161312_anh-meme-meo-avt.jpg";
+            }
+            else
+            {
+                img = System.IO.Path.GetFileName(img);
+            }
+
+            return ResolveUrl("~/Images_News/" + img);
         }
 
         private string MapCatToName(string key)

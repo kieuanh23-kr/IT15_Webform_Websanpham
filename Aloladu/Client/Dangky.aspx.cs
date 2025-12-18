@@ -53,7 +53,7 @@ namespace Aloladu.Client
                 return;
             }
 
-            // Chỉ cho số (bạn có thể nới lỏng tùy ý)
+            // Chỉ cho số 
             if (!Regex.IsMatch(phone, @"^\d{8,15}$"))
             {
                 lblMsg.Text = "SĐT không hợp lệ (chỉ số, 8-15 ký tự).";

@@ -28,6 +28,7 @@ namespace Aloladu.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+           
             if (!IsPostBack)
             {
                 LoadNews();
@@ -170,7 +171,6 @@ namespace Aloladu.Admin
                     if (n > 0)
                     {
                         ShowMsg("Thêm mới thành công!", "green");
-                        Response.Redirect("TintucCuahangChitiet.aspx?id=" + n);
                         return;
                     }
                     else

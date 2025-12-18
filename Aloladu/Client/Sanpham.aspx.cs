@@ -160,7 +160,7 @@ namespace Aloladu.Client
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 string sql = @"
-            SELECT TOP 5 Id, Name, Warranty, OldPrice, Price, ImageUrl, Description
+            SELECT TOP 5 Id, Name, OldPrice, Price, ImageUrl, Description
             FROM Products
             ORDER BY Id DESC";
 
@@ -192,7 +192,7 @@ namespace Aloladu.Client
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 string sql = @"
-            SELECT TOP 5 Id, Name, Warranty, OldPrice, Price, ImageUrl, Description
+            SELECT TOP 5 Id, Name, OldPrice, Price, ImageUrl, Description
             FROM Products
             ORDER BY Id DESC";
 

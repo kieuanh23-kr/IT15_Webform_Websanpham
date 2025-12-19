@@ -112,29 +112,36 @@
         }
 
         .news-grid{
-            display:grid;
+            display: grid;
             grid-template-columns: 1fr 1fr;
-            gap:18px;
+            gap: 18px;
+            margin-top: 14px;
         }
         .news-card{
-            border:2px solid #2e2dfb;
-            border-radius:10px;
-            overflow:hidden;
-            background:#fff;
+            display: block;
+            border: 2px solid #1b1bd6;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #fff;
+            text-decoration: none !important;
         }
         .nc-img{
-            height:180px;
-            background:#fafafa;
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
         }
-        .nc-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+        .nc-img img{ 
+            width:100%; 
+            height:100%; 
+            object-fit:cover;
+            display:block; 
+        }
         .nc-title{
-            padding:12px 14px;
-            color:#1712c9;
-            font-weight:900;
-            font-size:18px;
-            white-space:nowrap;
-            overflow:hidden;
-            text-overflow:ellipsis;
+             padding: 14px 16px;
+             font-weight: 800;
+             color: #1b1bd6;
+             font-size: 22px;
         }
 
         /*Tin tức ở trang 2*/

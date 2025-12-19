@@ -17,11 +17,17 @@ namespace Aloladu.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if(Session["ADMIN_USER"]==null)
+            {
+                Response.Redirect("Dangnhap.aspx");
+            }
             if (!IsPostBack)
             {
                 BindOrders();
-                gvOrders.HeaderRow.TableSection = TableRowSection.TableHeader;
-
+                if (gvOrders.HeaderRow != null)
+                {
+                    gvOrders.HeaderRow.TableSection = TableRowSection.TableHeader;
+                }
             }
         }
 
@@ -164,13 +170,13 @@ namespace Aloladu.Admin
                     return "badge bg-warning text-dark px-3 py-2 rounded-pill";
 
                 case "chuẩn bị giao":
-                    return "badge bg-info px-3 py-2 rounded-pill";
+                    return "badge bg-dark px-3 py-2 rounded-pill";
 
                 case "đang giao":
                     return "badge bg-success px-3 py-2 rounded-pill";
 
                 case "hoàn thành":
-                    return "badge bg-danger px-3 py-2 rounded-pill";
+                    return "badge bg-primary px-3 py-2 rounded-pill";
 
                 default:
                     return "badge bg-secondary px-3 py-2 rounded-pill";

@@ -455,7 +455,7 @@ namespace Aloladu.Client
             string img = r["ImageUrl"]?.ToString();
             if (string.IsNullOrWhiteSpace(img))
             {
-                img = "20251218161312_anh-meme-meo-avt.jpg";
+                img = "Cua-hang-do-gia-dung.jpg";
             }
             else
             {

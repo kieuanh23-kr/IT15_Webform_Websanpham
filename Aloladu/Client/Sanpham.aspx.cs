@@ -69,11 +69,12 @@ namespace Aloladu.Client
                 }
 
                 string sql = @"
-                    SELECT Id, Name, Description, OldPrice, Price, ImageUrl
-                    FROM Products
-                    WHERE BrandName = @b
-                    ORDER BY Id DESC
-                    OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
+                    SELECT Proc_ID, Proc_Name, Proc_Cat, Proc_Brand, Proc_Price, Proc_Quan, 
+                        Proc_OldPrice,Proc_Image,Proc_Des
+                        FROM vw_Products
+                        WHERE Proc_Brand = @b
+                        ORDER BY Proc_ID DESC
+                        OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@b", brandName);
@@ -86,7 +87,7 @@ namespace Aloladu.Client
                 // Fix ảnh fallback
                 foreach (DataRow r in dt.Rows)
                 {
-                    string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
+                    string img = r["Proc_Image"] == DBNull.Value ? "" : r["Proc_Image"].ToString();
                     if (string.IsNullOrWhiteSpace(img))
                     {
                         img = "download.png";
@@ -95,7 +96,7 @@ namespace Aloladu.Client
                     {
                         img = System.IO.Path.GetFileName(img);
                     }
-                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
+                    r["Proc_Image"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rpt.DataSource = dt;
@@ -160,9 +161,10 @@ namespace Aloladu.Client
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 string sql = @"
-            SELECT TOP 5 Id, Name, OldPrice, Price, ImageUrl, Description
-            FROM Products
-            ORDER BY Id DESC";
+                    SELECT TOP 5 Proc_ID, Proc_Name, Proc_Cat, Proc_Brand, Proc_Price, Proc_Quan, 
+                        Proc_OldPrice,Proc_Image,Proc_Des
+                        FROM vw_Products
+                        ORDER BY Proc_Quan DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
@@ -170,7 +172,7 @@ namespace Aloladu.Client
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
+                    string img = r["Proc_Image"] == DBNull.Value ? "" : r["Proc_Image"].ToString();
                     if (string.IsNullOrWhiteSpace(img))
                     {
                         img = "download.png";
@@ -179,7 +181,7 @@ namespace Aloladu.Client
                     {
                         img = System.IO.Path.GetFileName(img);
                     }
-                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
+                    r["Proc_Image"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rptTopSelling.DataSource = dt;
@@ -192,9 +194,10 @@ namespace Aloladu.Client
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 string sql = @"
-            SELECT TOP 5 Id, Name, OldPrice, Price, ImageUrl, Description
-            FROM Products
-            ORDER BY Id DESC";
+            SELECT TOP 5 5 Proc_ID, Proc_Name, Proc_Cat, Proc_Brand, Proc_Price, Proc_Quan, 
+                        Proc_OldPrice,Proc_Image,Proc_Des,Proc_Sale
+                        FROM vw_Products
+            ORDER BY Proc_Sale DESC";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
@@ -202,7 +205,7 @@ namespace Aloladu.Client
 
                 foreach (DataRow r in dt.Rows)
                 {
-                    string img = r["ImageUrl"] == DBNull.Value ? "" : r["ImageUrl"].ToString();
+                    string img = r["Proc_Image"] == DBNull.Value ? "" : r["Proc_Image"].ToString();
                     if (string.IsNullOrWhiteSpace(img))
                     {
                         img = "download.png";
@@ -211,7 +214,7 @@ namespace Aloladu.Client
                     {
                         img = System.IO.Path.GetFileName(img);
                     }
-                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
+                    r["Proc_Image"] = ResolveUrl("~/Images/" + img);
                 }
 
                 rptTopDeals.DataSource = dt;

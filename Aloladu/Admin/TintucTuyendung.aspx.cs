@@ -17,11 +17,17 @@ namespace Aloladu.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+
+            if (Session["ADMIN_USER"] == null)
+            {
+                Response.Redirect("Dangnhap.aspx");
+            }
+
             if (!IsPostBack)
             {
                 BindRecs();
-                gvRecs.HeaderRow.TableSection = TableRowSection.TableHeader;
+                if(gvRecs.HeaderRow != null)
+                    gvRecs.HeaderRow.TableSection = TableRowSection.TableHeader;
 
             }
         }

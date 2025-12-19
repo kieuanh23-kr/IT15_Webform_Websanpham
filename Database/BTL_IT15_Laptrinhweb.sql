@@ -32,6 +32,9 @@ CREATE TABLE Orders
     CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
     Customers_ID int --Người đặt
 );
+ALTER TABLE Orders
+ADD CONSTRAINT FK_Orders_CustomersID
+FOREIGN KEY (Customers_ID) REFERENCES Customers(Id);
 
 
 /*BẢN TIN TỨC CỬA HÀNG VÀ SỨC KHỎE - NEWS*/
@@ -45,62 +48,6 @@ CREATE TABLE News
     ImageUrl NVARCHAR(255) NULL,           
     IsFeatured BIT NOT NULL DEFAULT 0
 );
-
---Insert ví dụ
-INSERT INTO News
-(
-    Title,
-    Content,
-    Category,
-    ImageUrl,
-    IsFeatured,
-    CreatedAt
-)
-VALUES
-(
-    N'Siêu sale cực khủng ngày 20/10',
-    N'Ngày Phụ nữ Việt Nam 20/10 là dịp đặc biệt để tôn vinh, tri ân và gửi lời cảm ơn đến những người phụ nữ tuyệt vời xung quanh chúng ta – từ mẹ, vợ, chị gái cho đến người yêu, bạn bè, hay đồng nghiệp.
-
-Đây không chỉ là ngày của những bó hoa hay lời chúc ngọt ngào, mà còn là cơ hội để nói “cảm ơn” và “yêu thương” bằng hành động thực tế nhất: một món quà được chọn bằng cả tấm lòng.
-
-Nhân dịp này, cửa hàng Aloladu triển khai chương trình SIÊU SALE CỰC KHỦNG với hàng trăm sản phẩm gia dụng chính hãng, giảm giá sâu lên đến 50%, số lượng có hạn.',
-    N'cua-hang',
-    N'Images/download.jpg',
-    1,
-    GETDATE()
-),
-(
-    N'Ưu đãi cuối tuần – Mua sắm thả ga',
-    N'Cuối tuần này, Aloladu mang đến nhiều ưu đãi hấp dẫn cho các sản phẩm gia dụng thiết yếu, giúp bạn tiết kiệm chi phí và nâng cấp không gian sống.',
-    N'cua-hang',
-    N'Images/download.jpg',
-    0,
-    DATEADD(DAY, -1, GETDATE())
-),
-(
-    N'Ra mắt dòng sản phẩm gia dụng mới 2025',
-    N'Aloladu chính thức ra mắt loạt sản phẩm gia dụng thông minh năm 2025 với thiết kế hiện đại, tiết kiệm điện và thân thiện với môi trường.',
-    N'cua-hang',
-    N'Images/download.jpg',
-    0,
-    DATEADD(DAY, -2, GETDATE())
-);
-
-
-
-INSERT INTO News (Title, Content, Category, ImageUrl, IsFeatured, CreatedAt)
-VALUES
-(
-    N'Các tip nấu đồ ăn bằng lò vi sóng',
-    N'Trong những năm gần đây, nồi chiên không dầu đã trở thành một thiết bị gia dụng phổ biến... (bạn thay nội dung thật sau)',
-    N'suc-khoe',
-    N'Images/health-1.jpg',
-    1,
-    GETDATE()
-),
-(N'Ăn uống khoa học mỗi ngày', N'Một vài gợi ý ăn uống lành mạnh...', N'suc-khoe', N'Images/health-2.jpg', 0, DATEADD(DAY,-1,GETDATE())),
-(N'Ngủ đủ giấc giúp tăng đề kháng', N'Mẹo ngủ đủ và đúng giờ...', N'suc-khoe', N'Images/health-3.jpg', 0, DATEADD(DAY,-2,GETDATE()));
-
 
 
 
@@ -188,10 +135,12 @@ Select
     Products.OldPrice as [Proc_OldPrice],
 	Products.ImageUrl as [Proc_Image],
 	Products.Description as [Proc_Des],
+    ((Products.OldPrice-Products.Price)*100/Products.OldPrice) as [Proc_Sale],
     SUM(Orders.Quantity) as [Proc_Quan],
     SUM(Orders.TotalAmount) as [Proc_Total]
 From Products left join Orders on Products.Id=Orders.ProductId
-Group by Products.Id, Name,CategoryKey, BrandName,Products.Price,Products.OldPrice,Products.ImageUrl,Products.Description
+Group by Products.Id, Name,CategoryKey, BrandName,Products.Price,Products.OldPrice,Products.ImageUrl,Products.Description,((Products.OldPrice-Products.Price)*100/Products.OldPrice)
+
 
 /*VIEW HIỂN THỊ TIN TỨC CỬA HÀNG*/
 CREATE VIEW vw_News_Store as
@@ -281,7 +230,6 @@ Begin
     If @Isfeature=1
             UPDATE News SET IsFeatured=0 where Id<>@ID and Category=@Cat
 End
-
 
 
 

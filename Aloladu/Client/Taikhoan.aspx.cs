@@ -110,7 +110,7 @@ namespace Aloladu.Client
                 return;
             }
 
-            // ✅ Parse ngày sinh (cho phép bỏ trống)
+            //Parse ngày sinh 
             DateTime birthDate;
             bool hasBirth = DateTime.TryParse(birthStr, out birthDate);
 

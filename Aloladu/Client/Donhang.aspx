@@ -34,7 +34,7 @@
         }
         .fg .ddl{
             width:120px;
-            height:28px;
+            height:34px;
             border:1.5px solid #2e2dfb;
             border-radius:6px;
             padding:3px 8px;
@@ -75,10 +75,11 @@
         .order-status{
             font-weight:900;
         }
-        .st-wait{ color:#2bbf69; }      /* Chờ xử lý (xanh như hình) */
-        .st-prep{ color:#ff9800; }      /* Chuẩn bị giao */
-        .st-ship{ color:#2196f3; }      /* Đang giao */
-        .st-done{ color:#8e24aa; }      /* Hoàn thành */
+        
+        .st-wait{ color:#ff9800; }      /* Chờ xử lý (xanh như hình) */
+        .st-prep{ color:#000000; }      /* Chuẩn bị giao */
+        .st-ship{ color:#2bbf69; }      /* Đang giao */
+        .st-done{ color:#2e2dfb; }      /* Hoàn thành*/
 
         .order-body{
             border-radius:12px;

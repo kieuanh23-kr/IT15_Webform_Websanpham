@@ -162,7 +162,7 @@ namespace Aloladu.Client
         private string ResolveImg(string img)
         {
             if (string.IsNullOrWhiteSpace(img))
-            { img = "20251218161312_anh-meme-meo-avt.jpg"; }
+            { img = "Cua-hang-do-gia-dung.jpg"; }
             else
             {
                 img = System.IO.Path.GetFileName(img);

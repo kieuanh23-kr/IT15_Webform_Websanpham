@@ -90,7 +90,7 @@
 
             <div class="mb-4">
                 <div class="form-label">Mật khẩu</div>
-                <asp:TextBox ID="txtPhone" runat="server" CssClass="tb" placeholder="SĐT"></asp:TextBox>
+                <asp:TextBox ID="txtPhone" runat="server" CssClass="tb" placeholder="SĐT" TextMode="Password"></asp:TextBox>
             </div>
 
             <div class="actions">

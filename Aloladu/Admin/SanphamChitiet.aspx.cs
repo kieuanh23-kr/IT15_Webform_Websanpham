@@ -29,7 +29,11 @@ namespace Aloladu.Admin
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+
+            if (Session["ADMIN_USER"] == null)
+            {
+                Response.Redirect("Dangnhap.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadProducts();

@@ -179,7 +179,8 @@
             DataKeyNames="Rec_ID"
             CssClass="table table-hover align-middle recs-table"
             GridLines="None" 
-            UseAccessibleHeader="true">
+            UseAccessibleHeader="true"
+            ShowHeaderWhenEmpty="true">
 
             <Columns>
                 <asp:TemplateField HeaderStyle-CssClass="col-check" ItemStyle-CssClass="col-check" HeaderStyle-BackColor="#d9d9d9">

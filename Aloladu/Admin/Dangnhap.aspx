@@ -110,7 +110,7 @@
 
                             <div class="mb-4">
                                 <div class="form-label">Mật khẩu</div>
-                                <asp:TextBox ID="txtPass" runat="server" CssClass="tb" placeholder="Nhập mật khẩu"></asp:TextBox>
+                                <asp:TextBox ID="txtPass" runat="server" CssClass="tb" placeholder="Nhập mật khẩu" TextMode="Password"></asp:TextBox>
                             </div>
 
                             <asp:Label ID="lblMsg" runat="server" CssClass="text-danger small d-block text-center mb-2" Visible="false"></asp:Label> 

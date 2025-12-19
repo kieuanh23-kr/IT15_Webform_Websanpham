@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style>
 
+        /* Category Grid */
         .cat-grid {
             display: grid;
             grid-template-columns: repeat(6, minmax(120px, 1fr));
@@ -16,86 +17,99 @@
             text-align: center;
         }
 
-            .cat-card .thumb {
-                border: 2px solid #3b2bf6;
-                border-radius: 14px;
-                height: 240px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 12px;
-                background: #fff;
-            }
-
-            .cat-card img {
-                max-width: 100%;
-                max-height: 100%;
-                object-fit: contain;
-            }
-
-            .cat-card .label {
-                margin-top: 10px;
-                font-weight: 700;
-            }
-
-        /*Card sản phẩm*/
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(240px, 1fr));
-            gap: 24px;
+        .cat-card .thumb {
+            border: 2px solid #3b2bf6;
+            border-radius: 14px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            background: #fff;
         }
 
+        .cat-card img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cat-card .label {
+            margin-top: 10px;
+            font-weight: 700;
+        }
+
+        /* CARD SẢN PHẨM - CỠ CỐ ĐỊNH*/
         .p-card {
             border: 2px solid #2e2dfb;
             border-radius: 18px;
             overflow: hidden;
             background: #fff;
             position: relative;
-            height: 100%;
-            margin-right: 8px;
+            height: 380px; /* Chiều cao cố định */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .p-img {
-            height: 200px;
+            height: 220px; /* Chiều cao cố định cho ảnh */
             background: #fff;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
-            .p-img img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                padding: 14px;
-            }
+        .p-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 14px;
+        }
+
+        .p-divider {
+            height: 2px;
+            background-color: #2e2dfb;
+            flex-shrink: 0;
+        }
 
         .p-body {
             padding: 16px;
             padding-right: 64px; /* chừa chỗ cho nút + */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .p-name {
             font-weight: 700;
             font-size: 15px;
             color: #1d1bd9;
-            margin: 2px 0 2px;
-            white-space: nowrap; /* KHÔNG cho xuống dòng */
-            overflow: hidden; /* Ẩn phần dư */
+            margin: 0 0 4px 0;
+            white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
+            flex-shrink: 0;
         }
 
-        .p-sub {
+        .p-decrition {
             color: #222;
-            font-size: 15px;
-            margin-bottom: 10px;
+            font-size: 13px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 0;
         }
 
         .p-old {
             color: #777;
             text-decoration: line-through;
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 6px;
+            flex-shrink: 0;
         }
 
         .p-price {
@@ -103,14 +117,22 @@
             font-weight: 700;
             font-size: 30px;
             margin: 0;
+            flex-shrink: 0;
+            line-height: 1.2;
+            word-break: break-all; /* Cho phép break nếu số quá dài */
+        }
+
+        /* Tự động giảm font-size khi giá quá dài */
+        .p-price:has(+ *) {
+            font-size: clamp(15px, 5vw, 30px);
         }
 
         .p-add {
             position: absolute;
             right: 16px;
             bottom: 16px;
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 8px;
             border: none;
             background: #1d1bd9;
@@ -120,19 +142,14 @@
             justify-content: center;
             font-size: 26px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
-            .p-add:hover {
-                opacity: 0.92;
-            }
-
-        .p-divider {
-            height: 2px;
-            background-color: #2e2dfb; /* cùng màu viền card */
+        .p-add:hover {
+            opacity: 0.92;
         }
 
-
-        /* ===== Brand carousel wrapper ===== */
+        /*BRAND BOX - HIỂN THỊ 5 SẢN PHẨM VỚI SCROLL*/
         .brand-box {
             border: 3px solid #2e2dfb;
             border-radius: 14px;
@@ -141,19 +158,98 @@
             background: #fff;
         }
 
+        .brand-viewport {
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: 0 -18px; /* Bù lại padding để scroll full width */
+            padding: 0 18px;
+            scroll-behavior: smooth;
+        }
+
+        /* Ẩn scrollbar nhưng vẫn scroll được */
+        .brand-viewport::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .brand-viewport::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .brand-viewport::-webkit-scrollbar-thumb {
+            background: #2e2dfb;
+            border-radius: 4px;
+        }
+
+        .brand-viewport::-webkit-scrollbar-thumb:hover {
+            background: #1d1bd9;
+        }
+
         .brand-row {
             display: flex;
-            gap: 16px;
-            overflow: hidden;
-            flex-wrap: nowrap;
+            gap: 18px;
         }
 
-        /* mỗi item có width cố định để scroll theo “bước” */
+        /* Mỗi sản phẩm có width cố định */
         .brand-item {
-            flex: 0 0 220px;
+            flex: 0 0 calc((100% - 72px) / 5); 
+            min-width: 200px; /* Width tối thiểu */
+            max-width: 280px; /* Width tối đa */
         }
 
-        /* Thanh brand dưới */
+        /* ===== SẢN PHẨM BÁN CHẠY & GIẢM GIÁ - TƯƠNG TỰ ===== */
+        .best-wrap {
+            background: #1712c9;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 22px;
+        }
+
+        .best-title {
+            color: #fff;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: .5px;
+            margin: 0 0 16px;
+            text-transform: uppercase;
+        }
+
+        .best-row {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            padding: 0 8px 10px 8px;
+            scroll-behavior: smooth;
+            margin: 0 -15px; /* Bù lại padding */
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .best-row::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .best-row::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+
+        .best-row::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.5);
+            border-radius: 4px;
+        }
+
+        .best-row::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.7);
+        }
+
+        .best-item {
+            flex: 0 0 calc((100% - 72px) / 5);
+            min-width: 200px;
+            max-width: 280px;
+        }
+
+        /* Thanh brand footer */
         .brand-footer {
             margin-top: 16px;
             background: #1712c9;
@@ -192,60 +288,48 @@
             user-select: none;
         }
 
-            .brand-btn:hover {
-                opacity: 0.9;
-            }
-
-            /*Sản phẩm bán chạy*/
-        .best-wrap {
-            background: #1712c9;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 22px;
-            justify-content: space-evenly;
+        .brand-btn:hover {
+            opacity: 0.9;
         }
-
-        .best-title {
-            color: #fff;
-            text-align: center;
-            font-weight: 700;
-            letter-spacing: .5px;
-            margin: 0 0 16px;
-            text-transform: uppercase;
-        }
-
-        .best-row {
-            display: flex;
-            gap: 25px;
-            overflow-x: auto;
-            padding: 0 8px 10px 8px; /* Thêm padding-bottom */
-            scroll-behavior: smooth;
-            justify-content: center;
-
-        }
-        .best-row .p-name {
-            font-weight: 700;
-            font-size: 15px;
-            color: #1d1bd9;
-            margin: 2px 0 2px;
-            white-space: nowrap; /* KHÔNG cho xuống dòng */
-            overflow: hidden; /* Ẩn phần dư */
-            text-overflow: ellipsis;
-        }
-        .best-item {
-            flex: 0 0 230px;
-            min-width: 200px;
-        }
-
-
 
         .brand-btn[disabled],
-        .brand-btn.disabled{
+        .brand-btn.disabled {
             opacity: .4;
             pointer-events: none;
         }
 
+        
 
+        /* Tablet lớn */
+        @media (max-width: 1200px) {
+            .brand-item{
+                flex: 0 0 calc((100% - 54px) / 4); /* 4 items */
+            }
+            .best-item {
+                flex: 0 0 calc((100% - 54px) / 4); /* 4 items */
+            }
+        }
+
+        /* Tablet */
+        @media (max-width: 992px) {
+            .cat-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+    
+            .brand-item {
+                flex: 0 0 calc((100% - 36px) / 3); /* 3 items */
+            }
+            .best-item {
+                flex: 0 0 calc((100% - 36px) / 3); /* 3 items */
+            }
+            .p-price {
+                font-size: 25px;
+            }
+        }
+
+       
+
+       
 
     </style>
 </asp:Content>
@@ -305,17 +389,17 @@
                         <div class="brand-item">
                             <div class="p-card">
                                 <div class="p-img">
-                                    <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("Name") %>' />
+                                    <img src='<%# Eval("Proc_Image") %>' alt='<%# Eval("Proc_Name") %>' />
                                 </div>
                                 <div class="p-divider"></div>
                                 <div class="p-body">
-                                    <div class="p-name"><%# Eval("Name") %></div>
-                                    <div class="p-decrition"><%# Eval("Description") %></div>
-                                    <div class="p-old"><%# FormatMoney(Eval("OldPrice")) %></div>
-                                    <p class="p-price"><%# FormatMoney(Eval("Price")) %></p>
+                                    <div class="p-name"><%# Eval("Proc_Name") %></div>
+                                    <div class="p-decrition"><%# Eval("Proc_Des") %></div>
+                                    <div class="p-old"><%# FormatMoney(Eval("Proc_OldPrice")) %></div>
+                                    <p class="p-price"><%# FormatMoney(Eval("Proc_Price")) %></p>
                                 </div>
 
-                                <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Id") %>' title="Đặt hàng">+</a>
+                                <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Proc_ID") %>' title="Đặt hàng">+</a>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -349,17 +433,17 @@
                     <div class="best-item">
                         <div class="p-card">
                             <div class="p-img">
-                                <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("Name") %>' />
+                                <img src='<%# Eval("Proc_Image") %>' alt='<%# Eval("Proc_Name") %>' />
                             </div>
                             <div class="p-divider"></div>
                             <div class="p-body">
-                                <div class="p-name"><%# Eval("Name") %></div>
-                                <div class="p-decrition"><%# Eval("Description") %></div>
-                                <div class="p-old"><%# FormatMoney(Eval("OldPrice")) %></div>
-                                <p class="p-price"><%# FormatMoney(Eval("Price")) %></p>
+                                <div class="p-name"><%# Eval("Proc_Name") %></div>
+                                <div class="p-decrition"><%# Eval("Proc_Des") %></div>
+                                <div class="p-old"><%# FormatMoney(Eval("Proc_OldPrice")) %></div>
+                                <p class="p-price"><%# FormatMoney(Eval("Proc_Price")) %></p>
                             </div>
 
-                            <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Id") %>' title="Đặt hàng">+</a>
+                            <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Proc_ID") %>' title="Đặt hàng">+</a>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -376,17 +460,17 @@
                         <div class="brand-item">
                             <div class="p-card">
                                 <div class="p-img">
-                                    <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("Name") %>' />
+                                    <img src='<%# Eval("Proc_Image") %>' alt='<%# Eval("Proc_Name") %>' />
                                 </div>
                                 <div class="p-divider"></div>
                                 <div class="p-body">
-                                    <div class="p-name"><%# Eval("Name") %></div>
-                                    <div class="p-decrition"><%# Eval("Description") %></div>
-                                    <div class="p-old"><%# FormatMoney(Eval("OldPrice")) %></div>
-                                    <p class="p-price"><%# FormatMoney(Eval("Price")) %></p>
+                                    <div class="p-name"><%# Eval("Proc_Name") %></div>
+                                    <div class="p-decrition"><%# Eval("Proc_Des") %></div>
+                                    <div class="p-old"><%# FormatMoney(Eval("Proc_OldPrice")) %></div>
+                                    <p class="p-price"><%# FormatMoney(Eval("Proc_Price")) %></p>
                                 </div>
 
-                                <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Id") %>' title="Đặt hàng">+</a>
+                                <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Proc_ID") %>' title="Đặt hàng">+</a>
                             </div>
                         </div>
                     </ItemTemplate>
@@ -415,17 +499,17 @@
                     <div class="best-item">
                         <div class="p-card">
                             <div class="p-img">
-                                <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("Name") %>' />
+                                <img src='<%# Eval("Proc_Image") %>' alt='<%# Eval("Proc_Name") %>' />
                             </div>
                             <div class="p-divider"></div>
                             <div class="p-body">
-                                <div class="p-name"><%# Eval("Name") %></div>
-                                <div class="p-decrition"><%# Eval("Description") %></div>
-                                <div class="p-old"><%# FormatMoney(Eval("OldPrice")) %></div>
-                                <p class="p-price"><%# FormatMoney(Eval("Price")) %></p>
+                                <div class="p-name"><%# Eval("Proc_Name") %></div>
+                                <div class="p-decrition"><%# Eval("Proc_Des") %></div>
+                                <div class="p-old"><%# FormatMoney(Eval("Proc_OldPrice")) %></div>
+                                <p class="p-price"><%# FormatMoney(Eval("Proc_Price")) %></p>
                             </div>
 
-                            <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Id") %>' title="Đặt hàng">+</a>
+                            <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Proc_ID") %>' title="Đặt hàng">+</a>
                         </div>
                     </div>
                 </ItemTemplate>
@@ -442,17 +526,17 @@
                         <div class="brand-item">
                             <div class="p-card">
                                 <div class="p-img">
-                                    <img src='<%# Eval("ImageUrl") %>' alt='<%# Eval("Name") %>' />
+                                    <img src='<%# Eval("Proc_Image") %>' alt='<%# Eval("Proc_Name") %>' />
                                 </div>
                                 <div class="p-divider"></div>
                                 <div class="p-body">
-                                    <div class="p-name"><%# Eval("Name") %></div>
-                                    <div class="p-decrition"><%# Eval("Description") %></div>
-                                    <div class="p-old"><%# FormatMoney(Eval("OldPrice")) %></div>
-                                    <p class="p-price"><%# FormatMoney(Eval("Price")) %></p>
+                                    <div class="p-name"><%# Eval("Proc_Name") %></div>
+                                    <div class="p-decrition"><%# Eval("Proc_Des") %></div>
+                                    <div class="p-old"><%# FormatMoney(Eval("Proc_OldPrice")) %></div>
+                                    <p class="p-price"><%# FormatMoney(Eval("Proc_Price")) %></p>
                                 </div>
 
-                                <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Id") %>' title="Đặt hàng">+</a>
+                                <a class="p-add" href='<%# "Dathang.aspx?productId=" + Eval("Proc_ID") %>' title="Đặt hàng">+</a>
                             </div>
                         </div>
                     </ItemTemplate>

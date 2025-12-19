@@ -60,6 +60,42 @@ namespace Aloladu.Client
         protected global::System.Web.UI.WebControls.LinkButton btnSearch;
 
         /// <summary>
+        /// navProc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navProc;
+
+        /// <summary>
+        /// navNews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navNews;
+
+        /// <summary>
+        /// navOrders control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navOrders;
+
+        /// <summary>
+        /// navUs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor navUs;
+
+        /// <summary>
         /// lblGreeting control.
         /// </summary>
         /// <remarks>

@@ -148,8 +148,8 @@
         <div class="suggest-head">
             <div class="suggest-title">Gợi ý các tin tức khác</div>
             <div style="display:flex; gap:10px;">
-                <asp:LinkButton ID="btnSugPrev" runat="server" CssClass="nav-btn" OnClick="btnSugPrev_Click">&#x2039;</asp:LinkButton>
-                <asp:LinkButton ID="btnSugNext" runat="server" CssClass="nav-btn" OnClick="btnSugNext_Click">&#x203A;</asp:LinkButton>
+                <asp:LinkButton ID="btnSugPrev" runat="server" CssClass="nav-btn" OnClick="btnSugPrev_Click">&#10094;</asp:LinkButton>
+                <asp:LinkButton ID="btnSugNext" runat="server" CssClass="nav-btn" OnClick="btnSugNext_Click">&#10095;</asp:LinkButton>
             </div>
         </div>
 

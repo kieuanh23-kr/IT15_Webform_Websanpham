@@ -123,33 +123,55 @@ namespace Aloladu.Client
             int customerId = Convert.ToInt32(Session["CustomerId"]);
 
             int offset = (CurrentPage - 1) * PageSize;
+            int totalOrders = 0;
+            int totalPages = 1;
 
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-              
-                string sql = @"
-                                SELECT
-                                    o.Id,
-                                    o.Status,
-                                    o.CreatedAt,
-                                    o.Quantity,
-                                    o.TotalAmount,
+                conn.Open();
 
-                                    p.Name        AS ProductName,
-                                    p.BrandName,
-                                    p.CategoryKey,
-                                    p.OldPrice,
-                                    p.Price,
-                                    p.ImageUrl,
-                                    p.Description
-                                FROM Orders o
-                                JOIN Products p ON o.ProductId = p.Id
-                                WHERE o.Customers_ID = @customerId
-                                  AND(@status = 'all' OR o.Status = @status)
-                                  AND (@brand  = 'all' OR p.BrandName = @brand)
-                                  AND (@cat    = 'all' OR LTRIM(RTRIM(p.CategoryKey)) = @cat)
-                                ORDER BY o.CreatedAt DESC
-                                OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
+                // Đếm tổng số đơn hàng
+                string countSql = @"
+        SELECT COUNT(*)
+        FROM Orders o
+        JOIN Products p ON o.ProductId = p.Id
+        WHERE o.Customers_ID = @customerId
+          AND (@status = 'all' OR o.Status = @status)
+          AND (@brand  = 'all' OR p.BrandName = @brand)
+          AND (@cat    = 'all' OR LTRIM(RTRIM(p.CategoryKey)) = @cat)";
+
+                SqlCommand countCmd = new SqlCommand(countSql, conn);
+                countCmd.Parameters.AddWithValue("@customerId", customerId);
+                countCmd.Parameters.AddWithValue("@status", status);
+                countCmd.Parameters.AddWithValue("@brand", brand);
+                countCmd.Parameters.AddWithValue("@cat", cat);
+
+                totalOrders = (int)countCmd.ExecuteScalar();
+                totalPages = (int)Math.Ceiling((double)totalOrders / PageSize);
+
+                string sql = @"
+        SELECT
+            o.Id,
+            o.Status,
+            o.CreatedAt,
+            o.Quantity,
+            o.TotalAmount,
+
+            p.Name        AS ProductName,
+            p.BrandName,
+            p.CategoryKey,
+            p.OldPrice,
+            p.Price,
+            p.ImageUrl,
+            p.Description
+        FROM Orders o
+        JOIN Products p ON o.ProductId = p.Id
+        WHERE o.Customers_ID = @customerId
+          AND(@status = 'all' OR o.Status = @status)
+          AND (@brand  = 'all' OR p.BrandName = @brand)
+          AND (@cat    = 'all' OR LTRIM(RTRIM(p.CategoryKey)) = @cat)
+        ORDER BY o.CreatedAt DESC
+        OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@status", status);
@@ -210,15 +232,22 @@ namespace Aloladu.Client
                     {
                         img = System.IO.Path.GetFileName(img);
                     }
-                    r["ImageUrl"] = ResolveUrl("~/Images/"+img);
+                    r["ImageUrl"] = ResolveUrl("~/Images/" + img);
                 }
 
                 pnEmpty.Visible = dt.Rows.Count == 0;
                 rptOrders.DataSource = dt;
                 rptOrders.DataBind();
 
+                // Cập nhật trạng thái button Prev
+                btnPrev.Enabled = CurrentPage > 1;
                 btnPrev.CssClass = CurrentPage > 1 ? "nav-btn" : "nav-btn opacity-50";
+
+                // Cập nhật trạng thái button Next
+                btnNext.Enabled = CurrentPage < totalPages;
+                btnNext.CssClass = CurrentPage < totalPages ? "nav-btn" : "nav-btn opacity-50";
             }
+
         }
 
         private string StatusToClass(string st)

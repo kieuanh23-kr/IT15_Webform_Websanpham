@@ -108,17 +108,35 @@ namespace Aloladu.Client
             if (priceSort == "desc") orderBy = "ORDER BY Price DESC";
 
             int offset = (CurrentPage - 1) * PageSize;
+            int totalProducts = 0;
+            int totalPages = 1;
 
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                // SQL Server 2012+ hỗ trợ OFFSET/FETCH
+                conn.Open(); // Mở connection 1 lần duy nhất
+
+                // Đếm tổng số sản phẩm
+                string countSql = @"
+                        SELECT COUNT(*)
+                        FROM Products
+                        WHERE (@cat = '' OR CategoryKey = @cat)
+                          AND (@brand = 'all' OR BrandName = @brand)";
+
+                SqlCommand countCmd = new SqlCommand(countSql, conn);
+                countCmd.Parameters.AddWithValue("@cat", cat);
+                countCmd.Parameters.AddWithValue("@brand", brand);
+
+                totalProducts = (int)countCmd.ExecuteScalar();
+                totalPages = (int)Math.Ceiling((double)totalProducts / PageSize);
+
+
                 string sql = $@"
-                    SELECT Id, Name, Description, OldPrice, Price, ImageUrl
-                    FROM Products
-                    WHERE (@cat = '' OR CategoryKey = @cat)
-                      AND (@brand = 'all' OR BrandName = @brand)
-                    {orderBy}
-                    OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
+                        SELECT Id, Name, Description, OldPrice, Price, ImageUrl
+                        FROM Products
+                        WHERE (@cat = '' OR CategoryKey = @cat)
+                          AND (@brand = 'all' OR BrandName = @brand)
+                        {orderBy}
+                        OFFSET @offset ROWS FETCH NEXT @size ROWS ONLY;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@cat", cat);
@@ -155,10 +173,16 @@ namespace Aloladu.Client
                     return;
                 }
 
-                // disable Prev nếu page 1
+                // Cập nhật trạng thái button Prev
                 btnPrev.Enabled = CurrentPage > 1;
-                btnPrev.CssClass = CurrentPage > 1 ? "nav-btn" : "nav-btn opacity-50";
+                btnPrev.CssClass = CurrentPage > 1 ? "nav-btn" : "nav-btn disabled";
+
+                // Cập nhật trạng thái button Next
+                btnNext.Enabled = CurrentPage < totalPages;
+                btnNext.CssClass = CurrentPage < totalPages ? "nav-btn" : "nav-btn disabled";
             }
+
+
         }
 
         public string FormatMoney(object value)

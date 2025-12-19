@@ -31,7 +31,7 @@
             padding: 30px 14px 45px 14px;
             font-size: 34px;
             font-weight: 800;
-            border-bottom: 2px solid rgba(255,255,255,.35);
+           
         }
 
         .admin-nav{
@@ -50,6 +50,9 @@
             border-bottom: 2px solid rgba(255,255,255,.35);
         }
         #end{
+            border-top:2px solid rgba(255,255,255,.35);
+        }
+        #navOrders{
             border-top:2px solid rgba(255,255,255,.35);
         }
         .admin-nav .sub-item{
@@ -118,6 +121,22 @@
             color: #fff;
             border-color: #0f0bb5;
         }
+        .nav-item.active{
+            color: #1712c9 !important;
+            background: #fff !important;
+        }
+        .sub-item.active{
+            color: #1712c9 !important;
+            background: #fff !important;
+        }
+        .sub-item-1.active{
+            color: #1712c9 !important;
+            background: #fff !important;
+        }
+        .sub-item-2.active{
+            color: #1712c9 !important;
+            background: #fff !important;
+        }
 
     </style>
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
@@ -131,20 +150,20 @@
                 <div class="admin-logo">Aloladu</div>
 
                 <nav class="admin-nav">
-                    <a class="nav-item" href="Donhang.aspx">Đơn hàng</a>
-                    <a class="nav-item" href="Sanpham.aspx">Sản phẩm</a>
+                    <a class="nav-item" href="Donhang.aspx" runat="server" id="navOrders">Đơn hàng</a>
+                    <a class="nav-item" href="Sanpham.aspx" runat="server" id="navProc">Sản phẩm</a>
 
-                    <a class="nav-item has-sub" href="TintucCuahang.aspx">
+                    <a class="nav-item has-sub" href="TintucCuahang.aspx" runat="server" id="navNews">
                         <span>Tin tức</span>
                         <span class="chev">&gt;</span>
                     </a>
                     <div class="sub-nav">
-                        <a class="sub-item-1" href="TintucCuahang.aspx">Cửa hàng</a>
-                        <a class="sub-item-2" href="TintucSuckhoe.aspx">Sức khỏe</a>
-                        <a class="sub-item" href="TintucTuyendung.aspx">Tuyển dụng</a>
+                        <a class="sub-item-1" href="TintucCuahang.aspx" runat="server" id="navNStore">Cửa hàng</a>
+                        <a class="sub-item-2" href="TintucSuckhoe.aspx" runat="server" id="navNHealth">Sức khỏe</a>
+                        <a class="sub-item" href="TintucTuyendung.aspx" runat="server" id="navNRec">Tuyển dụng</a>
                     </div>
 
-                    <a class="nav-item" id="end" href="Khachhang.aspx">Khách hàng</a>
+                    <a class="nav-item" id="end" href="Khachhang.aspx" runat="server">Khách hàng</a>
                 </nav>
             </aside>
 

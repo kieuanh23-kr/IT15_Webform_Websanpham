@@ -4,19 +4,18 @@
 Create table Products
 (
 	ImageUrl NVARCHAR(200) NULL,
-	Warranty NVARCHAR(200) NULL,
-	OldPrice DECIMAL(18,2) NULL,
+	OldPrice DECIMAL(18,2) NOT NULL,
 	Id INT IDENTITY PRIMARY KEY,
     Name NVARCHAR(200) NOT NULL,
     Description NVARCHAR(MAX), --Thời gian bảo hành
-	BrandName NVARCHAR(100) NULL,
+	BrandName NVARCHAR(100) NOT NULL,
     Price DECIMAL(18,2) NOT NULL DEFAULT 0,
-     CategoryKey nvarchar(100) -- Mặc định là các giá trị: dobep, giatla, donha, dongho,saykho,bongden
+     CategoryKey nvarchar(100) NOT NULL -- Mặc định là các giá trị: dobep, giatla, donha, dongho,saykho,bongden
 )
 
 
 /*BẢN ĐƠN HÀNG - ORDERS*/
-CREATE TABLE Orders
+CREATE TABLE Orders 
 (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     ProductId INT NOT NULL,
@@ -30,11 +29,17 @@ CREATE TABLE Orders
     Note NVARCHAR(255) NULL,
     Status NVARCHAR(50) NOT NULL, --Nhận 1 trong các giá trị: Chờ xử lý, Chuẩn bị giao, Đang giao, Hoàn thành (Tạo trên web nên không thêm check vào đây)
     CreatedAt DATETIME NOT NULL DEFAULT GETDATE(),
-    Customers_ID int --Người đặt
+    Customers_ID int NOT NULL--Người đặt
 );
 ALTER TABLE Orders
 ADD CONSTRAINT FK_Orders_CustomersID
 FOREIGN KEY (Customers_ID) REFERENCES Customers(Id);
+
+ALTER TABLE Orders
+ADD CONSTRAINT FK_Orders_ProductsID
+FOREIGN KEY (ProductId) REFERENCES Products(Id);
+
+
 
 
 /*BẢN TIN TỨC CỬA HÀNG VÀ SỨC KHỎE - NEWS*/

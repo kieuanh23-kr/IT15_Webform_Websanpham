@@ -37,6 +37,14 @@ namespace Aloladu.Admin
             if (!IsPostBack)
             {
                 LoadProducts();
+                if (Request.UrlReferrer != null)
+                {
+                    string referrer = Request.UrlReferrer.ToString();
+                    if (referrer.Contains("SanphamChitiet.aspx"))
+                    {
+                        ShowMsg("Thành công!", "green");
+                    }
+                }
             }
         }
 
@@ -163,7 +171,8 @@ namespace Aloladu.Admin
 
             if (ProcId <= 0) {
                 const string sqlInsert = @"INSERT INTO  Products (Name,OldPrice,Price,BrandName,CategoryKey,Description,ImageUrl)
-                                            VALUES (@Name,@OldPrice,@Price,@BrandName,@CategoryKey,@Des,@ImageUrl)";
+                                            VALUES (@Name,@OldPrice,@Price,@BrandName,@CategoryKey,@Des,@ImageUrl);
+                                            SELECT SCOPE_IDENTITY();";
 
                 using (var conn = new SqlConnection(connStr))
                 using (var cmd = new SqlCommand(sqlInsert, conn))
@@ -177,7 +186,8 @@ namespace Aloladu.Admin
                     cmd.Parameters.AddWithValue("@ImageUrl", string.IsNullOrEmpty(imageUrl) ? (object)DBNull.Value : imageUrl);
 
                     conn.Open();
-                    int n = cmd.ExecuteNonQuery();
+                    object result = cmd.ExecuteScalar();
+                    int n = Convert.ToInt32(result);
                     if (n <= 0)
                     {
                         ShowMsg("Thêm mới thất bại.", "red");
@@ -185,7 +195,7 @@ namespace Aloladu.Admin
                     }
                     else
                     {
-                        ShowMsg("Thêm mới thành công!", "green");
+                        Response.Redirect("SanphamChitiet.aspx?id="+n);
              
                     }
                 }
@@ -227,7 +237,7 @@ namespace Aloladu.Admin
             lblMsg.Visible = false;
 
             if (ProcId <= 0) { ShowMsg("Mã sản phẩm không hợp lệ.", "red"); return; }
-            // Get image URL before deleting
+            // Lấy link ảnh trước khi xóa
             string imageUrl = "";
             const string sqlGetImage = @"SELECT ImageUrl FROM Products WHERE Id = @id";
             using (var conn = new SqlConnection(connStr))
@@ -252,7 +262,7 @@ namespace Aloladu.Admin
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-            // Delete image file if exists
+            // Xóa ảnh trong server
             if (!string.IsNullOrEmpty(imageUrl))
             {
                 try

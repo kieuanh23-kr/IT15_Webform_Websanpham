@@ -147,7 +147,7 @@ namespace Aloladu.Admin
 
         protected void btnCreate_Click(object sender, EventArgs e)
         {
-            Response.Redirect("SanphamChitiet.aspx");
+            Response.Redirect("TintucTuyendungChitiet.aspx");
         }
 
     }

@@ -50,15 +50,15 @@
         }
 
         .nav-btn{
-            width: 26px;
-            height: 26px;
-            border: 2px solid #fff;
+            width: 40px;
+            height: 40px;
+            border: 2px solid #1712c9;
             border-radius: 4px;
             display:flex;
             align-items:center;
             justify-content:center;
-            background:#1712c9;
-            color: #fff;
+            background:#ffffff;
+            color: #1712c9;
             font-weight: 900;
             text-decoration:none;
             cursor:pointer;
@@ -78,56 +78,113 @@
         @media(max-width:768px){ .p-grid{ grid-template-columns: repeat(2, 1fr);} }
         @media(max-width:480px){ .p-grid{ grid-template-columns: 1fr;} }
 
-        /* Card sản phẩm (đúng kiểu bạn đã làm) */
-        .p-card{
-            border:2px solid #2e2dfb;
-            border-radius: 14px;
-            overflow:hidden;
+        /* Card sản phẩm */
+        .p-card {
+            border: 2px solid #2e2dfb;
+            border-radius: 18px;
+            overflow: hidden;
             background: #fff;
+            position: relative;
+            height: 380px; /* Chiều cao cố định */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .p-img {
+            height: 220px; /* Chiều cao cố định cho ảnh */
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .p-img img {
+            width: 100%;
             height: 100%;
+            object-fit: contain;
+            padding: 14px;
         }
-        .p-img{
-            height: 200px;
-            display:flex;
-            background: #fff;
-            align-items:center;
-            justify-content:center;  
+        .p-divider {
+            height: 2px;
+            background-color: #2e2dfb;
+            flex-shrink: 0;
         }
-        .p-img img{ 
-            padding: 14px; max-width:100%; object-fit:contain; 
 
-        }
-        .p-divider{ height:2px; background: #2e2dfb; }
 
-        .p-body{ padding: 16px; padding-right: 64px; }
-        .p-name{
-            color: #1d1bd9;
+        .p-body {
+            padding: 16px;
+            padding-right: 64px; /* chừa chỗ cho nút + */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .p-name {
             font-weight: 700;
-            margin: 2px 0 2px;
+            font-size: 15px;
+            color: #1d1bd9;
+            margin: 0 0 4px 0;
             white-space: nowrap;
-            overflow:hidden;
+            overflow: hidden;
             text-overflow: ellipsis;
+            flex-shrink: 0;
         }
-        .p-desc{ font-size: 15px; color:#222; margin-bottom: 10px; }
-        .p-old{ text-decoration:line-through; color:#777; font-size: 15px; margin-bottom: 6px; }
-        .p-price{ color:#ff2d2d; font-weight: 700; font-size: 30px; }
+        .p-desc{ 
+            color: #222;
+            font-size: 13px;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 0;
+        }
+        .p-old{ 
+            color: #777;
+            text-decoration: line-through;
+            font-size: 14px;
+            margin-bottom: 6px;
+            flex-shrink: 0;
+        }
+        .p-price{  
+             color: #ff2b2b;
+             font-weight: 700;
+             font-size: 30px;
+             margin: 0;
+             flex-shrink: 0;
+             line-height: 1.2;
+             word-break: break-all;  
 
+        }
+        /* Tự động giảm font-size khi giá quá dài */
+        .p-price:has(+ *) {
+            font-size: clamp(15px, 5vw, 30px);
+        }
         .p-buy{
-            position:absolute;
+            position: absolute;
             right: 16px;
             bottom: 16px;
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 8px;
+            border: none;
             background: #1d1bd9;
-            color:#fff;
-            display:flex;
-            align-items:center;
-            justify-content:center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 26px;
-            text-decoration:none;
+            text-decoration: none;
+            flex-shrink: 0;
         }
-
+        .p-buy:hover{
+            opacity: 0.92;
+        }
+        /* Tablet */
+        @media (max-width: 992px) {
+            .p-price {
+                font-size: 25px;
+            }
+        }
         /* ===== NEWS SECTION ===== */
         .news-wrap{
             margin-top: 26px;
@@ -253,8 +310,8 @@
         </div>
 
         <div class="nav-btns">
-            <asp:LinkButton ID="btnProdPrev" runat="server" CssClass="nav-btn" OnClick="btnProdPrev_Click" CausesValidation="false">&lt;</asp:LinkButton>
-            <asp:LinkButton ID="btnProdNext" runat="server" CssClass="nav-btn" OnClick="btnProdNext_Click" CausesValidation="false">&gt;</asp:LinkButton>
+            <asp:LinkButton ID="btnProdPrev" runat="server" CssClass="nav-btn" OnClick="btnProdPrev_Click" CausesValidation="false">&#10094;</asp:LinkButton>
+            <asp:LinkButton ID="btnProdNext" runat="server" CssClass="nav-btn" OnClick="btnProdNext_Click" CausesValidation="false">&#10095;</asp:LinkButton>
         </div>
     </div>
 
@@ -293,8 +350,8 @@
         <div class="blue-bar" style="margin-top:12px;">
             <div>Tin tức Cửa hàng &amp; Sức khỏe</div>
             <div class="nav-btns">
-                <asp:LinkButton ID="btnNewsPrev" runat="server" Class="nav-btn" OnClick="btnNewsPrev_Click" CausesValidation="false">&lt;</asp:LinkButton>
-                <asp:LinkButton ID="btnNewsNext" runat="server" Class="nav-btn" OnClick="btnNewsNext_Click" CausesValidation="false">&gt;</asp:LinkButton>
+                <asp:LinkButton ID="btnNewsPrev" runat="server" Class="nav-btn" OnClick="btnNewsPrev_Click" CausesValidation="false">&#10094;</asp:LinkButton>
+                <asp:LinkButton ID="btnNewsNext" runat="server" Class="nav-btn" OnClick="btnNewsNext_Click" CausesValidation="false">&#10095;</asp:LinkButton>
             </div>
         </div>
 
@@ -319,8 +376,8 @@
         <div class="blue-bar" style="margin-top:18px;">
             <div>Tin tức Tuyển dụng</div>
             <div class="nav-btns">
-                <asp:LinkButton ID="btnJobPrev" runat="server" Class="nav-btn" OnClick="btnJobPrev_Click" CausesValidation="false">&lt;</asp:LinkButton>
-                <asp:LinkButton ID="btnJobNext" runat="server" Class="nav-btn" OnClick="btnJobNext_Click" CausesValidation="false">&gt;</asp:LinkButton>
+                <asp:LinkButton ID="btnJobPrev" runat="server" Class="nav-btn" OnClick="btnJobPrev_Click" CausesValidation="false">&#10094;</asp:LinkButton>
+                <asp:LinkButton ID="btnJobNext" runat="server" Class="nav-btn" OnClick="btnJobNext_Click" CausesValidation="false">&#10095;</asp:LinkButton>
             </div>
         </div>
 

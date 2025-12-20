@@ -60,6 +60,7 @@ namespace Aloladu.Admin
                     navNews.Attributes["class"] += " active";
                     break;
                 case "TintucTuyendung.aspx":
+                case "TintucTuyendungChitiet.aspx":
                     navNews.Attributes["class"] += " active";
                     navNRec.Attributes["class"] += " active";
                     break;

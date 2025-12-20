@@ -150,13 +150,13 @@
                 </div>
             </div>
 
-            <!-- 👉 CỘT 3: THẲNG VỚI "NĂM THÀNH LẬP" -->
+            <!--  CỘT 3: THẲNG VỚI "NĂM THÀNH LẬP" -->
             <div class="item">
                 <div class="lbl">Thông tin liên hệ</div>
                 <div class="val">aloladu.nhansu@gmail.com</div>
             </div>
 
-            <!-- 👉 CỘT 4: TRỐNG (GIỮ CĂN LỀ) -->
+            <!--  CỘT 4: TRỐNG (GIỮ CĂN LỀ) -->
             <div></div>
         </div>
 
